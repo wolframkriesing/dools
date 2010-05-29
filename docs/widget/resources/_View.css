@@ -1,0 +1,42 @@
+/*
+	Global stuff, maybe move a level higher, to kinda the base css for this.
+*/
+.displayNone{
+	display:none;
+}
+.odd {
+	background-color: #EFEFEF;
+}
+
+
+
+
+
+
+.doolsDocsMethodView h1, .doolsDocsMethodView h2,
+.doolsDocsClassView h1, .doolsDocsClassView h2{
+	color:#3465A4;
+}
+
+.doolsDocsMethodView .fileInfo,
+.doolsDocsClassView .fileInfo{
+	font-size:0.8em;
+}
+
+.doolsDocsMethodView .exampleCall,
+.doolsDocsClassView .exampleCall{
+	font-family:Consolas,monospace;
+}
+
+.doolsDocsMethodView .parameters,
+.doolsDocsClassView .parameters{
+	border-spacing: 0 0;
+}
+	.doolsDocsMethodView .parameters thead,
+	.doolsDocsClassView .parameters thead{
+		font-weight: bold;
+	}
+	.doolsDocsMethodView .parameters td,
+	.doolsDocsClassView .parameters td{
+		padding: 0.3em;
+	}

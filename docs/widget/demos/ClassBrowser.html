@@ -1,0 +1,47 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<title>Class Browser</title>
+	<style type="text/css">
+		@import "../../../../dojo/resources/dojo.css";
+		@import "../../../../dijit/themes/nihilo/nihilo.css";
+		@import "../resources/ClassView.css";
+		@import "../resources/ApiList.css";
+	</style>
+</head>
+<body class="nihilo">
+	
+	<h1>Click a class/object on the left to see all info about it</h1>
+	
+	Search: <input type="text" onkeyup="dijit.byId('l1').filter(this.value, ['class', 'object'])"/>
+	
+	<div id="l1" style="width:20%; float:left; height:100%; overflow:auto;" dojoType="dools.docs.widget.ApiList"
+		urls="../../../app/apidoc/dojo/api-dools.json,../../../app/apidoc/dojo/api-dojo.json">
+		<script type="dojo/method" event="onClick" args="evt,data">
+			if ("class"==data.type || "object"==data.type){
+				var w = dijit.byId("classView");
+				if (w){
+					w.destroy();
+				}
+				var node = dojo.create("div", {id:"classView"});
+				dojo.body().appendChild(node);
+				var w = new dools.docs.widget.ClassView({className:data.moduleName, docSyntax:"dojo"}, node);
+				dojo.style(w.domNode, {float:"left", width:"70%"});
+			} else {
+				alert("Please click a class, this is just a Object/ClassBrowser :-), thanks.");
+			}
+		</script>
+	</div>
+	
+	<script type="text/javascript" src="../../../../dojo/dojo.js" djConfig="isDebug:true, parseOnLoad:true"></script>
+	<script type="text/javascript" src="../ApiList.js"></script>
+	<script type="text/javascript" src="../ClassView.js"></script>
+	<script type="text/javascript">
+		dojo.require("dools.docs.setup.dojo");
+		dojo.addOnLoad(function(){
+			// Filter the API list so we see only classes.
+			dijit.byId("l1").filter("", ["class", "object"]);
+		});
+	</script>
+</body>
+</html>

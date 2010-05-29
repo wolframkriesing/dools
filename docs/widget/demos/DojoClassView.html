@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<title>demo - Dojo Class View</title>
+	<style type="text/css">
+		@import "../../../../dojo/resources/dojo.css";
+		@import "../../../../dijit/themes/nihilo/nihilo.css";
+		@import "../resources/ClassView.css";
+		
+		body, html{
+			height:100%;
+		}
+	</style>
+</head>
+<body class="nihilo">
+	
+	<div id="mainTabContainer" dojoType="dijit.layout.TabContainer" style="width: 100%; height: 100%;">
+		<!--<div id="tab1" dojoType="dijit.layout.ContentPane" title="dojo">-->
+		<!--	<div id="m1" dojoType="dools.docs.widget.ClassView" className="dojo" docSyntax="dojo"></div>-->
+		<!--</div>-->
+		<div dojoType="dijit.layout.ContentPane" title="dools.lang.Reflection">
+			<div dojoType="dools.docs.widget.ClassView" className="dools.docs.Reflection" docSyntax="dojo"></div>
+		</div>
+		<div dojoType="dijit.layout.ContentPane" title="dools.docs.fileParser.Dojo">
+			<div dojoType="dools.docs.widget.ClassView" className="dools.docs.fileParser.Dojo" docSyntax="dojo"></div>
+		</div>
+		<!--<div dojoType="dijit.layout.ContentPane" title="dojox.lang.functional">-->
+		<!--	<div dojoType="dools.docs.widget.ClassView" className="dojox.lang.functional" docSyntax="dojo"></div>-->
+		<!--</div>-->
+		<!--<div dojoType="dijit.layout.ContentPane" title="dojox.data.JsonRestStore">-->
+		<!--	<div jsId="c" dojoType="dools.docs.widget.ClassView" className="dojox.data.JsonRestStore" docSyntax="dojo"></div>-->
+		<!--</div>-->
+		<!--<div dojoType="dijit.layout.ContentPane" title="dijit._TreeNode">-->
+		<!--	<div dojoType="dools.docs.widget.ClassView" className="dijit._TreeNode" docSyntax="dojo"></div>-->
+		<!--</div>-->
+		<!--<div dojoType="dijit.layout.ContentPane" title="dojo.cldr">-->
+		<!--	<div dojoType="dools.docs.widget.ClassView" className="dojo.cldr" docSyntax="dojo"></div>-->
+		<!--</div>-->
+		<!--<div id="tab2" dojoType="dijit.layout.ContentPane" title="dojox.form.Rating">-->
+		<!--	<div id="m2" dojoType="dools.docs.widget.ClassView" className="dojox.form.Rating" docSyntax="dojo"></div>-->
+		<!--</div>-->
+		<!--<div id="tab3" dojoType="dijit.layout.ContentPane" title="dojo.data.api.Read">-->
+		<!--	<div id="m3" dojoType="dools.docs.widget.ClassView" className="dojo.data.api.Read" docSyntax="dojo"></div>-->
+		<!--</div>-->
+		<div dojoType="dijit.layout.ContentPane" title="dijit.Calendar">
+			<div dojoType="dools.docs.widget.ClassView" className="dijit.Calendar" docSyntax="dojo"></div>
+		</div>
+	</div>
+	<script type="text/javascript" src="../../../../dojo/dojo.js" djConfig="isDebug:true, parseOnLoad:true"></script>
+	<script type="text/javascript" src="../ClassView.js"></script>
+	<script type="text/javascript">
+		dojo.require("dools.docs.setup.dojo");
+		dojo.require("dijit.layout.TabContainer");
+		dojo.require("dijit.layout.ContentPane");
+	</script>
+	
+</body>
+</html>

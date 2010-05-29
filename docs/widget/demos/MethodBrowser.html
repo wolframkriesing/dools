@@ -1,0 +1,53 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<title>Method Browser</title>
+	<style type="text/css">
+		@import "../../../../dojo/resources/dojo.css";
+		@import "../../../../dijit/themes/nihilo/nihilo.css";
+		@import "../resources/MethodView.css";
+		@import "../resources/ApiList.css";
+	</style>
+</head>
+<body class="nihilo">
+	
+	<h1>Click a method on the left to see all info about it</h1>
+	
+		<br />
+		Search: <input type="text" onkeyup="dijit.byId('l1').filter(this.value, 'method')"/>
+		<br />
+		<br />
+		
+		<div id="l1" style="width:20%; float:left;" dojoType="dools.docs.widget.ApiList"
+			urls="../../../app/apidoc/dojo/api-dools.json,../../../app/apidoc/dojo/api-dojo.json">
+
+			
+			<script type="dojo/method" event="onClick" args="evt,data">
+				if (data.type=="method"){
+					var w = dijit.byId("methodView");
+					if (w){
+						w.destroy();
+					}
+					var parts = data.moduleName.split(".");
+					var node = dojo.create("div", {id:"methodView"});
+					dojo.body().appendChild(node);
+					var w = new dools.docs.widget.MethodView({methodName:parts.pop(), objectName:parts.join("."), docSyntax:"dojo"}, node);
+					dojo.style(w.domNode, {float:"left", width:"70%"});
+				} else {
+					alert("Please click a method, this is just a MethodBrowser :-)");
+				}
+			</script>
+		</div>
+	
+	<script type="text/javascript" src="../../../../dojo/dojo.js" djConfig="isDebug:true, parseOnLoad:true"></script>
+	<script type="text/javascript" src="../ApiList.js"></script>
+	<script type="text/javascript" src="../MethodView.js"></script>
+	<script type="text/javascript">
+		dojo.require("dools.docs.setup.dojo");
+		dojo.addOnLoad(function(){
+			// Filter the API list so we see only methods.
+			dijit.byId("l1").filter("", "method");
+		});
+	</script>
+</body>
+</html>

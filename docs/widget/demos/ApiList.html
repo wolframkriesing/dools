@@ -1,0 +1,64 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<title>API List</title>
+	<style type="text/css">
+		@import "../../../../dojo/resources/dojo.css";
+		@import "../../../../dijit/themes/nihilo/nihilo.css";
+		@import "../resources/ApiList.css";
+	</style>
+</head>
+<body class="nihilo">
+	
+	<div style="background-color:white; position:fixed; top:0px; border:1px outset lightgrey; padding:0.3em;">
+		Search: <input type="text" style="margin:0 1em; width:300; font-size:20px;"
+					onkeyup="var v = this.value; dijit.registry.byClass('dools.docs.widget.ApiList').forEach(function(w){w.filter(v)})" />
+		<div id="clicked" style="color:red; font-size:20px;">Nothing clicked yet ...</div>
+	</div>
+	
+	<div style="margin-top:4em;">
+		<div style="width:22%; float:left;">
+			<h1>dools API</h1>
+			<div id="l0" dojoType="dools.docs.widget.ApiList"
+				urls="../../../app/apidoc/dojo/api-dools.json">
+				<script type="dojo/method" event="onClick" args="evt,data">
+					dojo.byId("clicked").innerHTML = dojo.toJson(data);
+				</script>
+			</div>
+		</div>
+		
+		<div style="width:22%; float:left;">
+			<h1>dojo+dijit API list</h1>
+			<div id="l1" dojoType="dools.docs.widget.ApiList"
+				urls="../../../app/apidoc/dojo/api-dojo.json,../../../app/apidoc/dojo/api-dijit.json">
+				<script type="dojo/method" event="onClick" args="evt,data">
+					dojo.byId("clicked").innerHTML = dojo.toJson(data);
+				</script>
+			</div>
+		</div>
+		
+		<div style="width:22%; float:left;">
+			<h1>dojox API list</h1>
+			<div id="l2" dojoType="dools.docs.widget.ApiList"
+				urls="../../../app/apidoc/dojo/api-dojox.json">
+				<script type="dojo/method" event="onClick" args="evt,data">
+					dojo.byId("clicked").innerHTML = dojo.toJson(data);
+				</script>
+			</div>
+		</div>
+		
+		<div style="width:22%; float:left;">
+			<h1>PhoneGap API list</h1>
+			<div id="l3" dojoType="dools.docs.widget.ApiList"
+				urls="../../../app/apidoc/phonegap/api.json">
+				<script type="dojo/method" event="onClick" args="evt,data">
+					dojo.byId("clicked").innerHTML = dojo.toJson(data);
+				</script>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="../../../../dojo/dojo.js" djConfig="isDebug:true, parseOnLoad:true"></script>
+	<script type="text/javascript" src="../ApiList.js"></script>
+</body>
+</html>

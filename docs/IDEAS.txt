@@ -1,0 +1,25 @@
+Customization
+- tagging
+  - adding tags to methods, classes, modules, properties
+    e.g. tag dojo.xhr with "ajax", "asynch", "remote", etc.
+  - allow searching by tags, if searching for "ajax" you will also find dojo.xhr
+- extract lines that start with "TODO" or "FIXXME" or alikes...
+
+- Plugin API for:  
+	- custom views
+  		- I (wolfram) want to create a view template which lists methods, properties like ddotjs.org/api-overview does
+    		whcih allows quick filtering and autoexpands if a small number of search results are found
+	- adding tabs to the tool tab container
+	- subscribing to Viewer and other core topics
+		- e.g. plugin to integrate with trac and related tickets
+		- offline search, gears driven
+		- offline notes, gears driven
+		- public comments interface
+		- live chat/support - cometd
+		- live editing
+		- custom left navigation
+	- CSS documentation
+		- CSS parsing
+	- Local caching via Gears
+	- Editor integration
+	- printer friendly view

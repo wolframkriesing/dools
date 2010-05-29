@@ -1,0 +1,187 @@
+<div dojoAttachPoint="domNode" class="doolsDocsMethodView">
+	<h1>{{ objectName }}.{{ tplData.name }}</h1>
+	
+	<!--
+		File(s)
+	-->
+	<div class="fileInfo">
+		implemented in <a href="{{ tplData.file.url }}" class="fileName">{{ tplData.file.name }}</a> (line {{ tplData.file.lineNumber }}, {{ tplData.file.numLines }} lines)
+	</div>
+	
+	<div class="shortDescription">{{ tplData.shortDescription }}</div>
+	<div class="description">{{ tplData.description|markdown }}</div>
+	
+	<h2>Usage</h2>
+	<div class="exampleCall">
+		{% spaceless %}
+			var ret = {{ objectName }}.{{ tplData.name }}({% for p in tplData.parameters %}{% ifnotequal forloop.counter "1" %}, {% endifnotequal %}{{ p.name }}{% endfor %});
+		{% endspaceless %}
+	</div>
+	
+	<!--
+		Parameters
+	-->
+	{% if tplData.parameters %}
+		<table class="parameters">
+			<thead>
+				<tr>
+					<td>Parameter</td>
+					<td>Type</td>
+					<td>Description</td>
+				</tr>
+			</thead>
+			<tbody>
+				{% for p in tplData.parameters %}
+					<tr class="{% cycle 'odd' 'even' %}">
+						<td>{{ p.name }}</td>
+						<td>{{ p.datatype }}</td>
+						<td>{{ p.description }}</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	{% endif %}
+	
+	<!--
+		Examples
+	-->
+	{% if tplData.example %}
+		<div class="methodExamples">
+			{% if method.obj.docString.example.items %}
+				<h2>Examples</h2>
+				{% for e in method.obj.docString.example %}
+					<div class="methodExample">
+						<h3>Example {{ forloop.counter }}:</h3>
+						{{ e }}
+					</div>
+				{% endfor %}
+			{% else %}
+				<div class="methodExample">
+					<h2>Example</h2>
+					{{ method.obj.docString.example }}
+				</div>
+			{% endif %}
+		</div>
+	{% endif %}
+
+	
+	
+	{% comment %}
+
+
+
+
+	<pre><code>
+		{{ tplData.sourceCode }}
+	</code></pre>
+
+
+
+
+
+
+	
+		{% if tplData.info %}
+			{% if tplData.info.description %}
+					<div class="titleDescription">{{ tplData.info.description|urlize|safe }}</div>
+			{% else %}
+				{% if tplData.info.summary %}
+					<div class="titleDescription">{{ tplData.info.summary|urlize|safe }}</div>
+				{% endif %}
+			{% endif %}
+		{% endif %}
+		
+		{% ifequal tplData.moduleType "method" %}
+			<h2>Usage</h2>
+			<div class="methodUsage"><span class="keyword">var</span> ret = <span class="keyword">{{ tplData.moduleName }}</span>({% for item in tplData.params %}{% ifnotequal forloop.counter "1" %}, {% endifnotequal %}{{ item.name }}{% endfor %});</div>
+			{% with tplData.params as item %}
+				{% include tplData.parameterTemplate %}
+			{% endwith %}
+		{% endifequal %}
+		
+		{% if tplData.info.example %}
+			<div class="examples">
+				{% if tplData.info.example.items %}
+					<h2>Examples</h2>
+					{% for inner_value in tplData.info.example %}
+						<div class="example">
+							<h3>Example {{ forloop.counter }}:</h3>
+							{{ inner_value|safe }}
+						</div>
+					{% endfor %}
+				{% else %}
+					<div class="example">
+						<h2>Example</h2>
+						{{ tplData.info.example|safe }}
+					</div>
+				{% endif %}
+			</div>
+		{% endif %}
+		
+		<!--
+			Methods
+		-->
+		{% if not tplData.methods|empty %}
+		<h2 class="methodHead">Methods
+			({{ tplData.amounts.methods.public }} public{% if tplData.amounts.methods.private %}, {{ tplData.amounts.methods.private }} private{% endif %})
+		</h2>
+		<table class="methodTable">
+			<tbody>
+				{% for method in tplData.methods %}
+				<tr class="{% cycle 'odd' 'even' %} type{{ method.obj.type|capfirst }}{% if method.obj.isInherited %} isInherited{% endif %}{% if method.obj.isOverridden %} isOverridden{% endif %}" name="{{ tplData.moduleName }}.{{ method.name }}" id="{{ tplData.moduleName }}.{{ method.name }}">
+					<td class="methodType">
+						<span class="visibility">&nbsp;</span>
+						<span class="annotation">&nbsp;</span>
+					</td>
+					<td class="methodDescription">
+						<div class="methodUsage expandable">
+							<span class="keyword">{% ifequal tplData.moduleType "module" %}{{ tplData.moduleName }}.{% endifequal %}{{ method.name }}</span>({% for my_item in method.obj.params %}{% ifnotequal forloop.counter "1" %}, {% endifnotequal %}{{ my_item.name }}{% endfor %})
+							<a class="expandLink">&nbsp;</a>
+						</div>
+						{% if method.obj.implementedIn.length %}
+							{% if method.obj.isOverridden %}also {% endif %}implemented in:
+							{% for parent in method.obj.implementedIn %}
+								<a href="#{{ parent }}.{{ method.name }}">{{ parent }}</a>{% if not forloop.last %}, {% endif %}
+							{% endfor %}
+						{% endif %}
+						<div class="methodDetail">
+							{% if method.obj.docString.summary %}
+								<div class="methodSummary">
+									{{ method.obj.docString.summary }}
+								</div>
+							{% endif %}
+							{% with method.obj.params as item %}
+								{% include tplData.parameterTemplate %}
+							{% endwith %}
+							{% if method.obj.docString.description %}
+								<div class="methodDescription">
+									{{ method.obj.docString.description|safe }}
+								</div>
+							{% endif %}
+							{% if method.obj.docString.example %}
+								<div class="methodExamples">
+									{% if method.obj.docString.example.items %}
+										<h2>Examples</h2>
+										{% for inner_value in method.obj.docString.example %}
+											<div class="methodExample">
+												<h3>Example {{ forloop.counter }}:</h3>
+												{{ inner_value|safe }}
+											</div>
+										{% endfor %}
+									{% else %}
+										<div class="methodExample">
+											<h2>Example</h2>
+											{{ method.obj.docString.example|safe }}
+										</div>
+									{% endif %}
+								</div>
+							{% endif %}
+						</div>
+					</td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+		{% endif %}
+	{% endcomment %}
+</div>

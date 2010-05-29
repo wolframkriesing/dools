@@ -1,0 +1,64 @@
+@import "_View.css";
+
+.doolsDocsClassView {
+	padding: 20px;
+}
+	.doolsDocsClassView h1 {
+		/* Allow the "extends" block to be behind the headline. */
+		display: inline;
+		margin-right: 1em;
+	}
+	
+	.doolsDocsClassView .ancestors {
+		display: inline;
+	}
+
+	.doolsDocsClassView .method,
+	.doolsDocsClassView .property {
+		margin-top: 0.2em;
+	}
+	
+	.doolsDocsClassView .methods li,
+	.doolsDocsClassView .properties li {
+		list-style-type: none;
+	}
+	
+	.doolsDocsClassView .methods .method a.name,
+	.doolsDocsClassView .properties .property a.name {
+		font-family: Consolas,monospace;
+		font-size: 1.2em;
+		text-decoration: none;
+		color: black;
+		font-weight: bold;
+		display: block;
+	}
+		.doolsDocsClassView .methods .method a.name:hover,
+		.doolsDocsClassView .properties .property a.name:hover {
+			text-decoration: underline;
+			background-color: #EFEFEF;
+		}
+	
+	.doolsDocsClassView .methods .method ._visibility_public,
+	.doolsDocsClassView .properties .property ._visibility_public {
+		background-image: url(../resources/visibility_public.png);
+	}
+	
+	.doolsDocsClassView .methods .method ._visibility_private,
+	.doolsDocsClassView .properties .property ._visibility_private {
+		background-image: url(../resources/visibility_private.png);
+	}
+	
+	.doolsDocsClassView .methods .method ._visibility_protected,
+	.doolsDocsClassView .properties .property ._visibility_protected {
+		background-image: url(../resources/visibility_protected.png);
+	}
+	
+	.doolsDocsClassView .methods .method ._isOverridden_,
+	.doolsDocsClassView .properties .property ._isOverridden_ {
+		background-image: url(../resources/isOverridden.png);
+	}
+	
+	.doolsDocsClassView .methods .method ._isInherited_,
+	.doolsDocsClassView .properties .property ._isInherited_ {
+		background-image: url(../resources/isInherited.png);
+	}

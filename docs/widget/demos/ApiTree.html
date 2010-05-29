@@ -1,0 +1,72 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<title>API Tree</title>
+	<style type="text/css">
+		@import "../../../../dojo/resources/dojo.css";
+		@import "../../../../dijit/themes/nihilo/nihilo.css";
+		@import "../resources/ApiTree.css";
+	</style>
+</head>
+<body class="nihilo">
+	
+	<div style="background-color:white; position:fixed; top:0px; border:1px outset lightgrey; padding:0.3em;">
+		<h1 id="clicked" style="color:red;">Nothing clicked yet ...</h1>
+	</div>
+	
+	<div style="margin-top:3em;">
+		<div style="width:22%; float:left;">
+			<h1>dools API alphabetically</h1>
+			<div dojoType="dools.docs.widget.ApiTree" urls="../../../app/apidoc/dojo/api-dools.json">
+				<script type="dojo/method" event="onNodeClick" args="treeNode,data">
+					onNodeClick(treeNode, data);
+				</script>
+			</div>
+		</div>
+		
+		<div style="width:22%; float:left;">
+			<h1>dojo API alphabetically</h1>
+			<div dojoType="dools.docs.widget.ApiTree" urls="../../../app/apidoc/dojo/api-dojo.json,../../../app/apidoc/dojo/api-dijit.json,../../../app/apidoc/dojo/api-dojox.json">
+				<script type="dojo/method" event="onNodeClick" args="treeNode,data">
+					onNodeClick(treeNode, data);
+				</script>
+			</div>
+		</div>
+		
+		<div style="width:22%; float:left;">
+			<h1>dojo API sorted by topics</h1>
+			<div dojoType="dools.docs.widget.ApiTree" urls="../../../app/apidoc/dojo/topics.json">
+				<script type="dojo/method" event="onNodeClick" args="treeNode,data">
+					onNodeClick(treeNode, data);
+				</script>
+			</div>
+		</div>
+		
+		<div style="width:22%; float:left;">
+			<h1>PhoneGap API</h1>
+			<div dojoType="dools.docs.widget.ApiTree" urls="../../../app/apidoc/phonegap/api.json">
+				<script type="dojo/method" event="onNodeClick" args="treeNode,data">
+					onNodeClick(treeNode, data);
+				</script>
+			</div>
+		</div>
+	</div>
+	
+	<script type="text/javascript" src="../../../../dojo/dojo.js" djConfig="isDebug:true, parseOnLoad:true"></script>
+	<script type="text/javascript" src="../../../../dijit/_Widget.js"></script>
+	<script type="text/javascript" src="../../../../dijit/_Templated.js"></script>
+	<script type="text/javascript" src="../../../../dijit/Tree.js"></script>
+	<script type="text/javascript" src="../ApiTree.js"></script>
+	<script type="text/javascript">
+		var df = dojo.require("dojox.lang.functional");
+		function onNodeClick(treeNode, data){
+			if (data.type){
+				dojo.byId("clicked").innerHTML = dojo.toJson(df.filterIn(data, function(value, key){return key!="children"}));
+			} else {
+// TODO for some reason the following fails when clicking on the label or the +/- sign in a certain order, than it feels as if the node cant be opened anymore, a tree bug?
+				//if (treeNode.isExpanded) treeNode.collapse(); else treeNode.expand();
+			}
+		}
+	</script>
+</body>
+</html>

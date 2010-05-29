@@ -1,0 +1,189 @@
+<div dojoAttachPoint="domNode" class="doolsDocsClassView">
+	<h1>{{ tplData.name }}</h1>
+	
+	<!--
+		Ancestors
+	-->
+	{% if tplData.ancestors|length %}
+		<div class="ancestors">
+			extends: 
+			{% for a in tplData.ancestors %}
+				<a href="{{ a }}" class="ancestor">{{ a }}</a>{% if not forloop.last %}, {% endif %}
+			{% endfor %}
+		</div>
+	{% endif %}
+	
+	<!--
+		Files
+	-->
+	<div class="fileInfo">
+		implemented in
+		{% ifequal tplData.files|length 1 %}
+			{% for f in tplData.files %}
+				<a href="{{ f.url }}" class="fileName" style="display:inline;">{{ f.name }}</a>
+			{% endfor %}
+		{% else %}
+			<a href="javascript://" class="numFiles" dojoAttachEvent="onclick:_onClickNumFiles">{{ tplData.files|length }} files</a>
+			<ul class="fileNames displayNone" dojoAttachPoint="fileNamesNode">
+				{% for f in tplData.files %}
+					<li><a href="{{ f.url }}" class="fileName">{{ f.name }}</a></li>
+				{% endfor %}
+			</ul>
+		{% endifequal %}
+	</div>
+	
+	<div class="shortDescription">{{ tplData.shortDescription }}</div>
+	<div class="description">{{ tplData.description|markdown }}</div>
+	
+	<!--
+		Examples
+	-->
+	{% if tplData.examples|length %}
+		<div class="examples">
+			<h2>Examples</h2>
+			{% for e in tplData.examples %}
+				<h3>Example {{ forloop.counter }}:</h3>
+				<div class="example">
+					{{ e }}
+				</div>
+			{% endfor %}
+		</div>
+	{% endif %}
+
+	<!--
+		Methods
+	-->
+	{% if tplData.sortedMethodList|length %}
+		<h2>Methods ({{ tplData.stats.methods.numPublic }} public{% if tplData.stats.methods.numPrivate %}, {{ tplData.stats.methods.numPrivate }} private{% endif %})</h2>
+		<ul class="methods">
+			{% for m in tplData.sortedMethodList %}
+				{% comment %} Hide the method initially, when it is just inherited
+					and it is not even overridden.
+				{% endcomment %}
+				<li class="method _scope_{{ m.scope }} _visibility_{{ m.visibility }}{% if m.isInherited %} _isInherited_{% endif %}{% if m.isOverridden %} _isOverridden_{% endif %}{% if m.isInherited and not m.isOverridden %} displayNone{% endif %}">
+					<a class="name" href="javascript://" dojoAttachEvent="onclick:_onClickMethod">
+						<!--Scope is {{ m.scope }}-->
+<!-- is a SPAN with a class really the right thing here? -->
+						<span class="_visibility_{{ m.visibility }}" title="Visibility is {{ m.visibility }}"> &nbsp; </span>
+						{% if m.isInherited %}<span class="_isInherited_" title="inherited"> &nbsp; </span>{% endif %}
+						{% if m.isOverridden %}<span class="_isOverridden_" title="overridden"> &nbsp; </span>{% endif %}
+						{{ m.name }}({% for para in m.parameters %}{{ para.name }}{% if not forloop.last %}, {% endif %}{% endfor %})
+					</a>
+					
+					<div class="completeInfo displayNone">
+						
+						<!--
+							Implemented in
+						-->
+						{% if m.file %}
+							<div class="fileInfo">
+								implemented in <a href="{{ m.file.url }}" class="fileName">{{ m.file.name }}</a> (line {{ m.file.lineNumber }}, {{ m.file.numLines }} lines)
+							</div>
+						{% endif %}
+
+						{% if m.implementedIn|length %}
+							{% if m.isOverridden %}also {% endif %}implemented in:
+							{% for parent in m.implementedIn %}
+								<a href="#{{ parent }}.{{ method.name }}">{{ parent }}</a>{% if not forloop.last %}, {% endif %}
+							{% endfor %}
+						{% endif %}
+						
+						<!--
+							Short description.
+						-->
+						{% if m.shortDescription %}
+							<div class="shortDescription">{{ m.shortDescription }}</div>
+						{% endif %}
+						
+						<!--
+							Parameters
+						-->
+						{% if m.parameters|length %}
+							<table class="parameters">
+								<thead>
+									<tr>
+										<td>Parameter</td>
+										<td>Type</td>
+										<td>Description</td>
+									</tr>
+								</thead>
+								<tbody>
+									{% for p in m.parameters %}
+										<tr class="{% cycle 'odd' '' %}">
+											<td>{{ p.name }}</td>
+											<td>{{ p.datatype }}</td>
+											<td>{{ p.description }}</td>
+										</tr>
+									{% endfor %}
+								</tbody>
+							</table>
+						{% endif %}
+						{% if m.description %}
+							<div class="description">{{ m.description|safe }}</div>
+						{% endif %}
+						
+						<!--
+							Examples
+						-->
+						{% if m.examples %}
+							<div class="examples">
+								<h3>Examples</h3>
+								{% for e in m.examples %}
+									<div class="example">
+										<h3>Example {{ forloop.counter }}:</h3>
+										{{ e|safe }}
+									</div>
+								{% endfor %}
+							</div>
+						{% endif %}
+
+					</div>
+				</li>
+			{% endfor %}
+		</ul>
+	{% endif %}
+
+	<!--
+		Properties
+	-->
+	{% if tplData.sortedPropertyList|length %}
+		<h2>Properties</h2>
+		<ul class="properties">
+			{% for p in tplData.sortedPropertyList %}
+				<li class="property _scope_{{ p.scope }} _visibility_{{ p.visibility }}{% if p.readonly %} _readonly_{% endif %}{% if p.isInherited %} _isInherited_{% endif %}{% if p.isOverridden %} _isOverridden_{% endif %}{% if p.isInherited and not p.isOverridden %} displayNone{% endif %}">
+					<a class="name" href="javascript://" dojoAttachEvent="onclick:_onClickProperty">
+						&lt;Icon for {{ p.scope }}&gt;
+<!-- is a SPAN with a class really the right thing here? -->
+						<span class="_visibility_{{ p.visibility }}" alt="Visibility is {{ p.visibility }}">&nbsp;</span>
+						{% if p.isInherited %}<span class="_isInherited_">&nbsp;</span>{% endif %}
+						{% if p.isOverridden %}<span class="_isOverridden_">&nbsp;</span>{% endif %}
+						{{ p.name }}
+					</a>
+
+					
+					
+					<div class="completeInfo displayNone">
+						<!--
+							Fileinfo
+						-->
+						{% if p.file %}
+							<div class="fileInfo">
+								implemented in <a href="{{ p.file.url }}" class="fileName">{{ p.file.name }}</a> (line {{ p.file.lineNumber }})
+							</div>
+						{% endif %}
+
+						Type: {{ p.datatype }}<br />
+						Default: <pre>{{ p.default|json }}</pre><br />
+						
+						<!--
+							Description.
+						-->
+						{% if p.description %}
+							<div class="description">{{ p.description|safe }}</div>
+						{% endif %}
+					</div>
+				</li>
+			{% endfor %}
+		</ul>
+	{% endif %}
+</div>

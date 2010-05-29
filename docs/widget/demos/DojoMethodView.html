@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<title>Method View</title>
+	<style type="text/css">
+		@import "../../../../dojo/resources/dojo.css";
+		@import "../../../../dijit/themes/nihilo/nihilo.css";
+		@import "../resources/MethodView.css";
+		
+		body, html{
+			height:100%;
+		}
+		.displayNone{
+			display:none;
+		}
+	</style>
+</head>
+<body class="nihilo">
+	
+	<div id="mainTabContainer" dojoType="dijit.layout.TabContainer" style="width: 100%; height:100%;">
+		<div dojoType="dijit.layout.ContentPane" title="dojo.query">
+			<div id="m1" dojoType="dools.docs.widget.MethodView" objectName="dojo" methodName="query" docSyntax="dojo"></div>
+		</div>
+		<div dojoType="dijit.layout.ContentPane" title="dojo.create">
+			<div dojoType="dools.docs.widget.MethodView" objectName="dojo" methodName="create" docSyntax="dojo"></div>
+		</div>
+		<div dojoType="dijit.layout.ContentPane" title="dojo.xhr">
+			<div dojoType="dools.docs.widget.MethodView" objectName="dojo" methodName="xhr" docSyntax="dojo"></div>
+		</div>
+		<div dojoType="dijit.layout.ContentPane" title="dojox.json.query">
+			<div dojoType="dools.docs.widget.MethodView" objectName="dojox.json" methodName="query" docSyntax="dojo"></div>
+		</div>
+		<div dojoType="dijit.layout.ContentPane" title="dojo.cookie">
+			<div dojoType="dools.docs.widget.MethodView" objectName="dojo" methodName="cookie" docSyntax="dojo"></div>
+		</div>
+	</div>
+			
+	<script type="text/javascript" src="../../../../dojo/dojo.js" djConfig="isDebug:true, parseOnLoad:true"></script>
+	<script type="text/javascript" src="../MethodView.js"></script>
+	<script type="text/javascript">
+		dojo.require("dools.docs.setup.dojo");
+		dojo.require("dijit.layout.TabContainer");
+		dojo.require("dijit.layout.ContentPane");
+	</script>
+</body>
+</html>

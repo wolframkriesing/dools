@@ -1,0 +1,20 @@
+TODO
+- add markup parser again to DojoDocStringParser, make fit in the new structure
+- show parameters like dojo.__IoCallbackArgs in http://archive.dojotoolkit.org/nightly/dojotoolkit/dojo/_base/xhr.js
+- get docstrings for inherited methods stuff
+
+- store+restore last selected tabs in the left panel in a cookie
+- store+restore status of right and left panel (opened/closed)
+- autodetecting a namespace and creating the tree
+- add another type "mixin"
+
+FOR THE TREE
+- dojo.isSafari, etc, see hostenv_browser.js they are in there but the reflection doesnt find them (of course)
+  possible solution, before starting the reflection execute the pieces of code that are inside /*==== comments
+- the structures that are documented inside, like dojo.__XhrArgs, etc.
+- in dojo.dnd there are autoscroll.js and common.js we dont handle them yet ...
+- handle Nodelist-fxand NodeList-html
+
+
+DONE
+- uxebu.docs.Summary

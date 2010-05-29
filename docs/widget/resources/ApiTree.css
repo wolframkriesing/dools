@@ -1,0 +1,19 @@
+.apiTree .dijitTreeContent ._type_class {
+	background: url(../resources/moduleType_class.png);
+}
+
+.apiTree .dijitTreeContent ._type_method {
+	background: url(../resources/moduleType_method.png);
+}
+
+.apiTree .dijitTreeContent ._type_module {
+	background: url(../resources/moduleType_module.png);
+}
+
+.apiTree .dijitTreeContent ._type_mixin {
+	background: url(../resources/moduleType_mixin.png);
+}
+
+.apiTree .dijitTreeContent ._type_object {
+	background: url(../resources/moduleType_object.png);
+}
