@@ -1,0 +1,98 @@
+/* Top pane */
+.headerPane {
+	background: url(img/bgHeaderPane.gif) repeat-x;
+	padding: 5px;
+	border: none;
+	border-bottom: 2px solid #aaa;
+	height: 32px;
+	overflow: hidden;
+	position:relative;
+}
+
+	.headerPane .dojoApiLogo {
+		padding-left:10px;
+	}
+	
+	.headerPane .appLogo {
+		display:block;
+		position:absolute;
+		right:20px;
+		font-size:1.1em;
+	}
+	
+	.headerPane .previewBadge{
+		display:block;
+		float:right;
+		position:absolute;
+		top:30px;
+		z-index:100;
+	}
+
+/* Navigation pane */
+.naviPane {
+	width:250px;
+}
+
+/* Content container */
+.contentContainer {
+	background: url(img/bgContent.gif) repeat-x;
+}
+
+
+/* Home page styling */
+.homePage {
+	padding: 20px;
+}
+	
+	.homePage h1 {
+		margin-top: 0;
+	}
+	
+	.homePage .apiLogo {
+		float: right;
+		margin-left: 20px;
+	}
+	
+	.homePage h3 img {
+		vertical-align: middle;
+		margin-right: 5px;
+	}
+	
+	.homePage .navList {
+		list-style: none;
+	}
+	
+	.homePage .navList li img {
+		vertical-align: middle;
+	}
+	
+	.homePage .columnContent {
+		padding: 20px;
+	}
+	
+	.homePage .sep {
+		text-align: center;
+		margin: 10px 0 10px 0;
+	}
+
+
+/**
+ * author: Nicole sullivan
+ * http://github.com/stubbornella/oocss/tree/master
+ */
+/* **************** GRIDS ***************** */
+.line, .lastUnit {overflow: hidden; _overflow: visible; zoom:1;width:auto !important;}
+.unit{float:left;zoom:1;}
+.size1of1{float:none;}
+.size1of2{width:50%;_width:49.9% !important;}
+.lastUnit {float:none;_float:right;}
+
+
+/* Some theme fixes :-) */
+.nihilo .naviPane .dojoxExpandoIcon{
+	background-position:0 0;
+}
+.nihilo .naviPane.dojoxExpandoClosed .dojoxExpandoIcon,
+.dj_ie .nihilo .dojoxExpandoClosed .dojoxExpandoIcon{ /* unfortunately older IE doesnt understand the above notation. */
+	background-position:-30px 0;
+}

@@ -1,0 +1,172 @@
+[
+	// The structure is like this:
+	// 
+	//{
+	//	name:"whatever",				Title that shall appear in the tree.
+	//	type:"class|module|method",		This is optional, if you leave out the type it will be rendered like a folder and will expand/collapse the tree on click.
+	//	moduleName:"dojo.data"			The complete module name, which could be used directly in code.
+	//	children:[						If there shall be child nodes list them in here.
+	//		{label:"dojo.xhr", type:"method", moduleName:"dojo.xhr"},
+	//
+		
+		
+	//
+	//	djConfig
+	//
+	{label:"djConfig", type:"module"},
+	
+	{label:"AJAX", children:[
+		{label:"XHR", type:"method", moduleName:"dojo.xhr"},
+		{label:"XHR via POST", type:"method", moduleName:"dojo.xhrPost"},
+		{label:"XHR via GET", type:"method", moduleName:"dojo.xhrGet"},
+		{label:"XHR method PUT", type:"method", moduleName:"dojo.xhrPut"},
+		{label:"XHR method DELETE", type:"method", moduleName:"dojo.xhrDelete"},
+	]},
+	{label:"Animation and Effects", children:[
+		{label:"Base Animation Class", type:"class", moduleName:"dojo._Animation"},
+		{label:"Basic FX", children:[
+			{label:"Fade in", type:"method", moduleName:"dojo.fadeIn"},
+			{label:"Fade out", type:"method", moduleName:"dojo.fadeOut"},
+			{label:"Module dojo.fx", type:"module", moduleName:"dojo.fx"}
+		]},
+		{label:"Extended FX (dojox.fx)", type:"module", moduleName:"dojox.fx"},
+		{label:"Easing functions", type:"class", moduleName:"dojo.fx.easing"},
+		{label:"Toggler Class", type:"class", moduleName:"dojo.fx.Toggler"}
+	]},
+	{label:"Date, Time, Calendar", children:[
+		{label:"dojo.date", type:"method", moduleName:"dojo.date"},
+		{label:"dojo.date.locale", type:"method", moduleName:"dojo.date.locale"},
+		{label:"dojo.date.stamp", type:"method", moduleName:"dojo.date.stamp"},
+		{label:"dojox.date", type:"method", moduleName:"dojox.date"},
+		{label:"dojox.date.php", type:"method", moduleName:"dojox.date.php"},
+		{label:"dojox.date.posix", type:"method", moduleName:"dojox.date.posix"}
+	]},
+	{label:"Data/Format Conversion", children:[
+		{label:"String to JSON Conversion", type:"method", moduleName:"dojo.toJson"},
+		{label:"JSON to string conversion", type:"method", moduleName:"dojo.fromJson"},
+	]},
+	{label:"Data stores", children:[
+		{label:"API", children:[
+			{label:"Identity", type:"class", moduleName:"dojo.data.api.Identity"},
+			{label:"Notification", type:"class", moduleName:"dojo.data.api.Notification"},
+			{label:"Read", type:"class", moduleName:"dojo.data.api.Read"},
+			{label:"Request", type:"class", moduleName:"dojo.data.api.Request"},
+			{label:"Write", type:"class", moduleName:"dojo.data.api.Write"}
+		]},
+		{label:"Data service", children:[
+			{label:"AndOrReadStore", type:"class", moduleName:"dojox.data.AndOrReadStore"},
+			{label:"AndOrWriteStore", type:"class", moduleName:"dojox.data.AndOrWriteStore"},
+			{label:"AtomReadStore", type:"class", moduleName:"dojox.data.AtomReadStore"},
+			{label:"CouchDBRestStore", type:"class", moduleName:"dojox.data.CouchDBRestStore"},
+			{label:"CsvStore", type:"class", moduleName:"dojox.data.CsvStore"},
+			{label:"ItemFileReadStore", type:"class", moduleName:"dojo.data.ItemFileReadStore"},
+			{label:"ItemFileWriteStore", type:"class", moduleName:"dojo.data.ItemFileWriteStore"},
+			{label:"jsonPathStore", type:"class", moduleName:"dojox.data.jsonPathStore"},
+			{label:"JsonQueryRestStore", type:"class", moduleName:"dojox.data.JsonQueryRestStore"},
+			{label:"JsonRestStore", type:"class", moduleName:"dojox.data.JsonRestStore"},
+			{label:"KeyValueStore", type:"class", moduleName:"dojox.data.KeyValueStore"},
+			{label:"OpmlStore", type:"class", moduleName:"dojox.data.OpmlStore"},
+			{label:"PersevereStore", type:"class", moduleName:"dojox.data.PersevereStore"},
+			{label:"QueryReadStore", type:"class", moduleName:"dojox.data.QueryReadStore"},
+			{label:"RailsStore", type:"class", moduleName:"dojox.data.RailsStore"},
+			{label:"ServiceStore", type:"class", moduleName:"dojox.data.ServiceStore"},
+			{label:"StoreExplorer", type:"class", moduleName:"dojox.data.StoreExplorer"},
+			{label:"XmlStore", type:"class", moduleName:"dojox.data.XmlStore"}
+		]},
+		{label:"Web service", children:[
+			{label:"FlickrRestStore", type:"class", moduleName:"dojox.data.FlickrRestStore"},
+			{label:"FlickrStore", type:"class", moduleName:"dojox.data.FlickrStore"},
+			{label:"GoogleFeedStore", type:"class", moduleName:"dojox.data.GoogleFeedStore"},
+			{label:"GoogleSearchStore", type:"class", moduleName:"dojox.data.GoogleSearchStore"},
+			{label:"PicasaStore", type:"class", moduleName:"dojox.data.PicasaStore"},
+			{label:"S3Store", type:"class", moduleName:"dojox.data.S3Store"},
+			{label:"SnapLogicStore", type:"class", moduleName:"dojox.data.SnapLogicStore"},
+			{label:"WikipediaStore", type:"class", moduleName:"dojox.data.WikipediaStore"}
+		]},
+		{label:"AppStore", type:"class", moduleName:"dojox.data.AppStore"},
+		{label:"ClientFilter", type:"class", moduleName:"dojox.data.ClientFilter"},
+		{label:"CssClassStore", type:"class", moduleName:"dojox.data.CssClassStore"},
+		{label:"CssRuleStore", type:"class", moduleName:"dojox.data.CssRuleStore"},
+		{label:"FileStore", type:"class", moduleName:"dojox.data.FileStore"},
+		{label:"HtmlStore", type:"class", moduleName:"dojox.data.HtmlStore"},
+		{label:"HtmlTableStore", type:"class", moduleName:"dojox.data.HtmlTableStore"},
+		{label:"ItemExplorer", type:"class", moduleName:"dojox.data.ItemExplorer"},
+		{label:"OpenSearchStore", type:"class", moduleName:"dojox.data.OpenSearchStore"}
+	]},
+	{label:"Language Extensions", children:[
+		{label:"String", children:[
+			{label:"trim, pad, rep, substitute", type:"module", moduleName:"dojo.string"},
+			{label:"Tokenizer", type:"module", moduleName:"dojox.string.tokenizer"}
+		]},
+		{label:"AOP", type:"module"},
+		{label:"OO", type:"class"}
+	]},
+	{label:"Functional", children:[
+		{label:"AOP", children:[
+			{label:"Aspect", type:"module", moduleName:"dojox.lang.aspect"},
+			{label:"AOP", type:"module", moduleName:"dojox.lang.oo.aop"}
+		]},
+		{label:"Loops", children:[
+			{label:"forEach", type:"method", moduleName:"dojo.forEach"},
+			{label:"forIn", type:"method", moduleName:"dojox.lang.functional.forIn"}
+		]},
+		{label:"Filter functions", children:[
+			{label:"forEach", type:"method", moduleName:"dojo.forEach"},
+			{label:"map", type:"method", moduleName:"dojo.map"},
+			{label:"reduce", type:"method", moduleName:"dojox.lang.functional.reduce"}
+		]},
+		{label:"Searching array", children:[
+			{label:"any", type:"method", moduleName:"dojo.any"},
+			{label:"some", type:"method", moduleName:"dojo.some"},
+			{label:"scanl", type:"method", moduleName:"dojox.lang.functional.scanl"},
+			{label:"scanl1", type:"method", moduleName:"dojox.lang.functional.scanl1"},
+			{label:"scanr", type:"method", moduleName:"dojox.lang.functional.scanr"},
+			{label:"scanr1", type:"method", moduleName:"dojox.lang.functional.scanr1"}
+		]},
+		{label:"Reverse array processing", children:[
+			{label:"filterRev", type:"method", moduleName:"dojox.lang.functional.filterRev"},
+			{label:"forEachRev", type:"method", moduleName:"dojox.lang.functional.forEachRev"},
+			{label:"mapRev", type:"method", moduleName:"dojox.lang.functional.mapRev"},
+			{label:"everyRev", type:"method", moduleName:"dojox.lang.functional.everyRev"},
+			{label:"someRev", type:"method", moduleName:"dojox.lang.functional.someRev"}
+		]},
+		{label:"Working with objects", children:[
+			{label:"keys", type:"method", moduleName:"dojox.lang.functional.keys"},
+			{label:"values", type:"method", moduleName:"dojox.lang.functional.values"},
+			{label:"filterIn", type:"method", moduleName:"dojox.lang.functional.filterIn"},
+			{label:"forIn", type:"method", moduleName:"dojox.lang.functional.forIn"},
+			{label:"mapIn", type:"method", moduleName:"dojox.lang.functional.mapIn"}
+		]}
+	]},
+	{label:"...", type:"module", children:[
+	]},
+	{label:"Widgets", children:[
+		{label:"Form widgets", children:[
+			{label:"Textarea", type:"class", moduleName:"dijit.form.Textarea"},
+			{label:"Button", type:"class", moduleName:"dijit.form.Button"},
+			{label:"CheckBox", type:"class", moduleName:"dijit.form.CheckBox"},
+			{label:"ComboBox", type:"class", moduleName:"dijit.form.ComboBox"},
+			{label:"ComboButton", type:"class", moduleName:"dijit.form.ComboButton"},
+			{label:"Form", type:"class", moduleName:"dijit.form.Form"},
+			{label:"HorizontalSlider", type:"class", moduleName:"dijit.form.HorizontalSlider"},
+			{label:"VerticalSlider", type:"class", moduleName:"dijit.form.VerticalSlider"}
+		]},
+		{label:"Layout", children:[
+			{label:"_LayoutWidget", type:"class", moduleName:"dijit.layout._LayoutWidget"},
+			{label:"AccordionContainer", type:"class", moduleName:"dijit.layout.AccordionContainer"},
+			{label:"AccordionPane", type:"class", moduleName:"dijit.layout.AccordionPane"},
+			{label:"BorderContainer", type:"class", moduleName:"dijit.layout.BorderContainer"},
+			{label:"ContentPane", type:"class", moduleName:"dijit.layout.ContentPane"},
+			{label:"LayoutContainer", type:"class", moduleName:"dijit.layout.LayoutContainer"},
+			{label:"LinkPane", type:"class", moduleName:"dijit.layout.LinkPane"},
+			{label:"Form", type:"class", moduleName:"dijit.layout.Form"},
+			{label:"SplitContainer", type:"class", moduleName:"dijit.layout.SplitContainer"},
+			{label:"StackContainer", type:"class", moduleName:"dijit.layout.StackContainer"},
+			{label:"StackController", type:"class", moduleName:"dijit.layout.StackController"},
+			{label:"TabContainer", type:"class", moduleName:"dijit.layout.TabContainer"},
+			{label:"TabController", type:"class", moduleName:"dijit.layout.TabController"}
+		]}
+	]},
+	{label:"..", type:"module", children:[
+	]}
+]

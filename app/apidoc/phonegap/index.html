@@ -1,0 +1,157 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<title>Phonegap API Docs</title>
+	<style type="text/css">
+		@import "../../../../dojo/resources/dojo.css";
+		@import "../../../../dijit/themes/nihilo/nihilo.css";
+		@import "../../../../dijit/themes/dijit.css";
+		@import "../../../../dojox/highlight/resources/highlight.css";
+		@import "../../../../dojox/layout/resources/ExpandoPane.css";
+
+		@import "../../../docs/widget/resources/ApiTree.css";
+		@import "../../../docs/widget/resources/ApiList.css";
+		@import "../../../docs/widget/resources/MethodView.css";
+		@import "../../../docs/widget/resources/ClassView.css";
+		
+		/* Just for this page */
+		@import "../main.css";
+		
+		body, html{
+			height:100%;
+		}
+	</style>
+</head>
+<body class="nihilo">
+
+	<div dojoType="dijit.layout.BorderContainer" style="height: 100%; width: 100%;" gutters="false">
+		
+		<!--
+			Top pane
+		-->
+		<div class="headerPane" dojoType="dijit.layout.ContentPane" region="top" splitter="false">
+			<img class="appLogo" src="../img/logo_app.png" />
+			<a class="dojoApiLogo" href="http://www.dojotoolkit.org" title="Dojotoolkit.org" target="_blank"><img src="../img/dojoApiLogo.gif" /></a>
+			<img class="previewBadge" src="../img/preview.png" />
+		</div>
+		<div dojoType="dijit.layout.BorderContainer" liveSplitters="false" persist="false" gutters="true" region="center">
+			
+			<!--
+				Tree navigation on the left hand side
+			-->
+			<div class="naviPane" dojoType="dojox.layout.ExpandoPane" splitter="true" duration="125" region="left" title="Navigation" maxWidth="275">
+				<div dojoType="dijit.layout.TabContainer" tabStrip="true">
+					<div dojoType="dijit.layout.ContentPane" title="API">
+						<!--<div class="loading">Loading...</div>-->
+						<div dojoType="dools.docs.widget.ApiTree" style="padding-top: 5px;"
+							urls="api.json"></div>
+					</div>
+					<div dojoType="dijit.layout.ContentPane" title="Search" style="padding: 0px;">
+						<!--<div dojoType="dijit.MenuBar">-->
+						<!--	<div dojoType="dijit.MenuBarItemWidget" iconClass="iconSearch" style="padding: 0px;">-->
+						<!--		<input dojoType="uxebu.form.SearchBox" id="apiNavSearch" type="text" name="search" filterOptions="[{label: 'All', iconClass: 'apiDocsIcon', value: '', 'default': true},{label: 'Module', iconClass: 'apiDocsModuleIcon', value: 'module'},{label: 'Class', iconClass: 'apiDocsClassIcon', value: 'class'},{label: 'Method', iconClass: 'apiDocsMethodIcon', value: 'method'},{label: 'Mixin', iconClass: 'apiDocsMixinIcon', value: 'mixin'},{label: 'Object', iconClass: 'apiDocsObjectIcon', value: 'object'}]" />-->
+						<!--	</div>-->
+						<!--</div>-->
+						<!--<div class="search" style="padding:1em;"></div>-->
+						Search: <input class="searchInput" type="text"/><br />
+						<div id="apiListSearchWidget" dojoType="dools.docs.widget.ApiList" style="padding-top: 5px;"
+							urls="api.json"></div>
+					</div>
+				</div>
+			</div>
+			<!--
+				Content area
+			-->
+			<div id="tabContainer" dojoType="dijit.layout.TabContainer" region="center">
+				<div class="contentContainer" dojoType="dijit.layout.ContentPane" title="Dojo API" style="padding: 0px;">
+					<!--
+						Home page.
+					-->
+					<div class="homePage">
+						<img src="../img/logoLarge.gif" class="apiLogo" />
+						<h1>Welcome to the Dojo API Documentation</h1>
+						<p>On the following pages you can extensively browse the entire available Dojo API. Use the menu to the right or the search above to locate the modules you would like to inspect</p>
+						<div class="line">
+							<div class="unit size1of2">
+								<h3><img src="../img/icons/large/emblem-important.png" /> Dojo version: <span class="apiVersion"></span></h3>
+								<ul class="navList">
+									<li>
+										<img src="../img/icons/emblem-symbolic-link.png">
+										<a target="_blank" title="Dojotoolkit.org" href="http://dojotoolkit.org">Dojotoolkit.org</a>
+									</li>
+								</ul>
+								<div class="sep"><img src="../img/sep.gif" /></div>
+								<h3><img src="../img/icons/large/start-here.png">Getting started</h3>
+								<p>For a quick introduction watch the video tutorial or visit the uxebu blog</p>
+								<ul class="navList">
+									<li>
+										<img src="../img/icons/emblem-symbolic-link.png"> <a target="_blank" href="http://blog.uxebu.com">Quickstart</a>
+									</li>
+								</ul>
+								<div class="sep"><img src="../img/sep.gif" /></div>
+								<h3><img src="../img/icons/large/dialog-information.png" />About the Dojo Api</h3>
+								<p>The Dojo Api is a project of the uxebu developer tools.</p>
+								<ul class="navList">
+									<li>
+										<img src="../img/icons/emblem-symbolic-link.png"> <a target="_blank" href="http://uxebu.com">http://uxebu.com</a>
+									</li>
+								</ul>
+							</div>
+							<div class="unit size1of2 lastUnit">
+								<h3><img src="../img/icons/large/internet-web-browser.png">Get your own Dojo API</h3>
+								<p>
+									The Dojo Api is fully extensible and you can drop it right into your Dojo project, getting instant API documentation of your own code.
+								</p>
+								<p>
+									Currently this is a preview release and you just can get the sourcecode of the JavaScript API Documentation system on request. 
+									Just send us a mail to <strong>labs &auml;t uxebu.com</strong>.
+								</p>
+								<ul class="navList">
+									<li><img src="../img/icons/emblem-symbolic-link.png"> Download <strong>on request</strong></li>
+								</ul>
+								<div class="sep"><img src="../img/sep.gif" /></div>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+
+	<!--<h1>Click a class/object on the left to see all info about it</h1>-->
+	<!---->
+	<!--Search: <input type="text" onkeyup="dijit.byId('l1').filter(this.value, ['class', 'object'])"/>-->
+	<!---->
+	<!--<div id="l1" style="width:20%; float:left;" dojoType="dools.docs.widget.ApiList"-->
+	<!--	urls="../resources/dojoApi-dojo.json, ../resources/dojoApi-dijit.json, ../resources/dojoApi-dojox.json">-->
+	<!--	<script type="dojo/method" event="onClick" args="evt,name,type">-->
+	<!--		if ("class"==type || "object"==type){-->
+	<!--			var w = dijit.byId("classView");-->
+	<!--			if (w){-->
+	<!--				w.destroy();-->
+	<!--			}-->
+	<!--			var node = dojo.create("div", {id:"classView"});-->
+	<!--			dojo.body().appendChild(node);-->
+	<!--			var w = new dools.docs.widget.ClassView({className:name}, node);-->
+	<!--			dojo.style(w.domNode, {float:"left", width:"70%"});-->
+	<!--		} else {-->
+	<!--			alert("Please click a class, this is just a Object/ClassBrowser :-)");-->
+	<!--		}-->
+	<!--	</script>-->
+	<!--</div>-->
+	
+	<script type="text/javascript" src="../../../../dojo/dojo.js" djConfig="isDebug:true, parseOnLoad:true"></script>
+	<script type="text/javascript">
+		dojo.require("dools.docs.setup.phoneGap");
+		dojo.require("dools.app.apidoc._base");
+		
+		new dools.app.apidoc({docSyntax:"jsDoc"});
+	</script>
+</body>
+</html>

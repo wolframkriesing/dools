@@ -1,0 +1,119 @@
+[
+	//
+	//	djConfig
+	//
+	//{name:"djConfig", type:"module"},
+	
+	//
+	//	Dojo
+	//
+	{name:"dojo", type:"module", children:[
+		// A
+		{name:"AdapterRegistry", type:"class"},
+		// B
+		{name:"back", type:"object"},
+		{name:"behavior", type:"object"},
+		// C
+		{name:"cache", type:"object"},
+		{name:"cldr", type:"module", children:[
+			{name:"monetary", type:"object"},
+			{name:"supplemental", type:"object"}
+		]},
+		{name:"cookie", type:"method"},
+		{name:"Color", type:"class", children:[
+			{name:"named", type:"object"}
+		]},
+		{name:"colorFromArray", type:"method"},
+		{name:"colorFromHex", type:"method"},
+		{name:"colorFromString", type:"method"},
+		{name:"colorFromRgb", type:"method"},
+		{name:"colors", type:"object"},
+		{name:"create", type:"method"},
+		{name:"currency", type:"object"},
+		// D
+		{name:"data", children:[
+			{name:"api", children:[
+				{name:"Identity", type:"class"},
+				{name:"Notification", type:"class"},
+				{name:"Read", type:"class"},
+				{name:"Request", type:"class"},
+				{name:"Write", type:"class"}
+			]},
+			{name:"ItemFileReadStore", type:"class"},
+			{name:"ItemFileWriteStore", type:"class"}
+		]},
+		{name:"date", type:"object", children:[
+			{name:"locale", type:"object"},
+			{name:"stamp", type:"object"}
+		]},
+		{name:"Deferred", type:"class"},
+		{name:"DeferredList", type:"class"},
+		{name:"dnd", children:[
+			//{name:"autoscroll", type:"class"},
+			{name:"Avatar", type:"class"},
+			//{name:"common", type:"class"},
+			{name:"Container", type:"class"},
+			{name:"Manager", type:"class"},
+			{name:"move", type:"object"},
+			{name:"Moveable", type:"class"},
+			{name:"Mover", type:"class"},
+			{name:"Selector", type:"class"},
+			{name:"Source", type:"class"},
+			{name:"TimedMoveable", type:"class"}
+		]},
+		//{name:"dojo", type:"object"}, we dont need this :-)
+		// F
+		{name:"fx", type:"module",children:[
+			{name:"easing", type:"object"},
+			{name:"Toggler", type:"class"}
+		]},
+		// G
+		{name:"gears", type:"object"},
+		// H
+		{name:"hash", type:"method"},
+		{name:"html", type:"object"},
+		// I
+		{name:"i18n", type:"object"},
+		{name:"io", children:[
+			{name:"iframe", type:"module"},
+			{name:"script", type:"module"}
+		]},
+		// J
+		//{name:"jaxer", type:"object"}, seems only a wrapper for Jaxer NS ... not useful without loading jaxer it seems
+		// K
+		{name:"keys", type:"class"},
+		// N
+		{name:"NodeList", type:"class"},
+		//{name:"NodeList-fx", type:"class"},
+		//{name:"NodeList-html", type:"class"},
+		{name:"number", type:"object"},
+		// O
+		//{name:"OpenAjax", type:"class"}, its not really a dojo module
+		// P
+		{name:"parser", type:"object"},
+		// Q
+		{name:"query", type:"method"},
+		// R
+		{name:"regexp", type:"object"},
+		//{name:"robot", type:"class"}, 	robot+robotx are only used in doh, looks like they are not relevant to dojo itself
+		//{name:"robotx", type:"class"},
+		{name:"rpc", children:[
+			{name:"JsonpService", type:"class"},
+			{name:"JsonService", type:"class"},
+			{name:"RpcService", type:"class"}
+		]},
+		// S
+		{name:"string", type:"object"},
+		//{name:"tests", type:"object"}, only the tests dir
+		// X
+		{name:"xhr", type:"method"},
+		{name:"xhrGet", type:"method"},
+		{name:"xhrPost", type:"method"},
+		
+		
+		
+		{name:"_firebug", children:[
+			{name:"firebug", type:"object"}
+		]}
+	]}
+]

@@ -1,0 +1,61 @@
+[
+	{name:"dools", type:"module", children:[
+		{name:"app", children:[
+			{name:"apidoc", children:[
+				{name:"_base", type:"class"}
+			]},
+			{name:"_base", type:"class"}
+		]},
+		{name:"bookmarklets", children:[
+			{name:"Ruler", type:"class"},
+			{name:"Ruler.min", type:"class"},
+			{name:"_testRuler", type:"class"}
+		]},
+		{name:"docs", children:[
+			{name:"Coverage", type:"class"},
+			{name:"docStringParser", children:[
+				{name:"Dojo", type:"class"},
+				{name:"JsDoc", type:"class"},
+				{name:"_base", type:"class"}
+			]},
+			{name:"fileParser", children:[
+				{name:"Dojo", type:"class"},
+				{name:"JsDoc", type:"class"},
+				{name:"_base", type:"class"}
+			]},
+			{name:"Reflection", type:"class"},
+			{name:"setup", type:"object"},
+			{name:"summary", children:[
+				{name:"dojo", type:"object"},
+				{name:"jsDoc", type:"object"},
+				{name:"_base", type:"class"}
+			]},
+			{name:"widget", children:[
+				{name:"ApiList", type:"class"},
+				{name:"ApiTree", type:"class"},
+				{name:"ClassView", type:"class"},
+				{name:"MethodView", type:"class"},
+				{name:"_apiData", type:"class"},
+				{name:"_util", type:"class"}
+			]}
+		]},
+		{name:"dools", type:"object"},
+		{name:"lang", children:[
+			{name:"Reflection", type:"class"}
+		]},
+		{name:"markup", children:[
+			{name:"language", children:[
+				{name:"Markdown", type:"class"},
+				{name:"Mediawiki", type:"class"},
+				{name:"Textile", type:"class"}
+			]},
+			{name:"Parser", type:"class"}
+		]},
+		{name:"util", type:"object"},
+		{name:"widget", children:[
+			{name:"Crosshair", type:"class"},
+			{name:"NodeHighlighter", type:"class"},
+			{name:"Ruler", type:"class"}
+		]}
+	]}
+]

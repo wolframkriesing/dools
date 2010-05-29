@@ -1,0 +1,78 @@
+[
+	{name:"android", children:[
+		{name:"Accelerometer", type:"object", objectName:"Accelerometer"},
+		{name:"Camera", type:"object"},
+		{name:"Compass", type:"object"},
+		{name:"Contact", type:"object"},
+		{name:"Device", type:"object"},
+		{name:"File", type:"object"},
+		{name:"Geolocation", type:"object"},
+		{name:"Media", type:"object"},
+		{name:"Network", type:"object"},
+		{name:"Notification", type:"object"},
+		{name:"Position", type:"object"}
+	]},
+	{name:"blackberry", children:[
+		{name:"Acceleration", type:"object"},
+		{name:"Accelerometer", type:"object"},
+		{name:"Camera", type:"object"},
+		{name:"Compass", type:"object"},
+		{name:"Contacts", type:"object"},
+		{name:"Device", type:"object"},
+		{name:"File", type:"object"},
+		{name:"Geolocation", type:"object"},
+		{name:"Media", type:"object"},
+		{name:"Network", type:"object"},
+		{name:"Notification", type:"object"},
+		{name:"Orientation", type:"object"},
+		{name:"phonegap", type:"object"},
+		{name:"position", type:"object"},
+		{name:"sms", type:"object"},
+		{name:"telephony", type:"object"},
+		{name:"utility", type:"object"}
+	]},
+	{name:"iphone", children:[
+		{name:"acceleration", type:"object"},
+		{name:"accelerometer", type:"object"},
+		{name:"bonjour", type:"object"},
+		{name:"camera", type:"object"},
+		{name:"compass", type:"object"},
+		{name:"contact", type:"object"},
+		{name:"debugconsole", type:"object"},
+		{name:"device", type:"object"},
+		{name:"file", type:"object"},
+		{name:"geolocation", type:"object"},
+		{name:"map", type:"object"},
+		{name:"media", type:"object"},
+		{name:"network", type:"object"},
+		{name:"notification", type:"object"},
+		{name:"orientation", type:"object"},
+		{name:"position", type:"object"},
+		{name:"sms", type:"object"},
+		{name:"telephony", type:"object"},
+		{name:"uicontrols", type:"object"}
+	]},
+	{name:"symbian.wrt", children:[
+		{name:"acceleration", type:"object"},
+		{name:"accelerometer", type:"object"},
+		{name:"camera", type:"module", children:[
+			{name:"com.nokia.device.camera", type:"object"},
+			{name:"com.nokia.device.framework", type:"object"},
+			{name:"com.nokia.device.utility", type:"object"},
+			{name:"s60_camera", type:"object"}
+		]},
+		{name:"contact", type:"object"},
+		{name:"device", type:"object"},
+		{name:"geolocation", type:"object"},
+		{name:"media", type:"object"},
+		{name:"notification", type:"object"},
+		{name:"orientation", type:"object"},
+		{name:"position", type:"object"},
+		{name:"sms", type:"object"},
+		{name:"storage", type:"object"}
+	]},
+	{name:"winmo", children:[
+		{name:"device", type:"object"},
+		{name:"media", type:"object"}
+	]}
+]

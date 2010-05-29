@@ -1,0 +1,873 @@
+[
+	{name:"dojox", type:"module", children:[
+		{name:"analytics", type:"module", children:[
+			{name:"plugins", children:[
+				{name:"consoleMessages", type:"object"},
+				{name:"dojo", type:"object"},
+				{name:"idle", type:"object"},
+				{name:"mouseClick", type:"object"},
+				{name:"mouseOver", type:"object"},
+				{name:"window", type:"object"}
+			]},
+			//{name:"profiles", children:[ irrelevant for the apidocs
+			//	{name:"analytics.profile", type:"object"},
+			//	{name:"analyticsInBase.profile", type:"object"}
+			//]},
+			{name:"Urchin", type:"class"},
+			{name:"_base", type:"class"}
+		]},
+		{name:"atom", children:[
+			{name:"io", children:[
+				{name:"Connection", type:"class"},
+				{name:"model", children:[ // All the following are from model.js
+					{name:"AtomItem", type:"class"},
+					{name:"Category", type:"class"},
+					{name:"Collection", type:"class"},
+					{name:"Content", type:"class"},
+					{name:"Entry", type:"class"},
+					{name:"Feed", type:"class"},
+					{name:"Generator", type:"class"},
+					{name:"Link", type:"class"},
+					{name:"Node", type:"class"},
+					{name:"Person", type:"class"},
+					{name:"Service", type:"class"},
+					{name:"util", type:"object"},
+					{name:"Workspace", type:"class"},
+					{name:"_actions", type:"object"},
+					{name:"_Constants", type:"object"}
+				]}
+			]},
+			{name:"widget", type:"module", children:[
+				{name:"AtomEntryCategoryFilter", type:"class"}, // From FeedViewer.js
+				{name:"FeedEntryEditor", type:"class"},
+				{name:"FeedEntryViewer", type:"class"},
+				{name:"EntryHeader", type:"class"}, // From FeedEntryViewer.js
+				{name:"FeedViewer", type:"class"},
+				{name:"FeedViewer.CategoryIncludeFilter", type:"class"}, // From FeedViewer.js
+				{name:"FeedViewerEntry", type:"class"}, // From FeedViewer.js
+				{name:"FeedViewerGrouping", type:"class"}, // From FeedViewer.js
+				{name:"PeopleEditor", type:"class"} // From FeedEntryEditor.js
+			]}
+		]},
+		{name:"av", children:[
+			{name:"FLAudio", type:"class"},
+			{name:"FLVideo", type:"class"},
+			{name:"widget", children:[
+				{name:"PlayButton", type:"class"},
+				{name:"Player", type:"class"},
+				{name:"ProgressSlider", type:"class"},
+				{name:"Status", type:"class"},
+				{name:"VolumeButton", type:"class"}
+			]},
+			{name:"_Media", type:"class"}
+		]},
+		{name:"charting", children:[
+			{name:"action2d", children:[
+				{name:"Base", type:"class"},
+				{name:"Highlight", type:"class"},
+				{name:"Magnify", type:"class"},
+				{name:"MoveSlice", type:"class"},
+				{name:"Shake", type:"class"},
+				{name:"Tooltip", type:"class"}
+			]},
+			{name:"axis2d", children:[
+				{name:"Base", type:"class"},
+				{name:"common", type:"object"},
+				{name:"Default", type:"class"}
+			]},
+			{name:"Chart2D", type:"class"},
+			{name:"Chart3D", type:"class"},
+			{name:"DataChart", type:"class"},
+			{name:"Element", type:"class"},
+			{name:"plot2d", children:[
+				{name:"Areas", type:"class"},
+				{name:"Bars", type:"class"},
+				{name:"Base", type:"class"},
+				{name:"Bubble", type:"class"},
+				{name:"Candlesticks", type:"class"},
+				{name:"ClusteredBars", type:"class"},
+				{name:"ClusteredColumns", type:"class"},
+				{name:"Columns", type:"class"},
+				{name:"common", type:"object"},
+				{name:"Default", type:"class"},
+				{name:"Grid", type:"class"},
+				{name:"Lines", type:"class"},
+				{name:"Markers", type:"class"},
+				{name:"MarkersOnly", type:"class"},
+				{name:"OHLC", type:"class"},
+				{name:"Pie", type:"class"},
+				{name:"Scatter", type:"class"},
+				{name:"Stacked", type:"class"},
+				{name:"StackedAreas", type:"class"},
+				{name:"StackedBars", type:"class"},
+				{name:"StackedColumns", type:"class"},
+				{name:"StackedLines", type:"class"}
+			]},
+			{name:"plot3d", children:[
+				{name:"Bars", type:"class"},
+				{name:"Base", type:"class"},
+				{name:"Cylinders", type:"class"}
+			]},
+			{name:"scaler", children:[
+				{name:"common", type:"object"},
+				{name:"linear", type:"object"},
+				{name:"primitive", type:"object"}
+			]},
+			{name:"Series", type:"class"},
+			{name:"Theme", type:"class"},
+			{name:"themes", children:[
+				{name:"Adobebricks", type:"class"},
+				{name:"Algae", type:"class"},
+				{name:"Bahamation", type:"class"},
+				{name:"BlueDusk", type:"class"},
+				{name:"CubanShirts", type:"class"},
+				{name:"Desert", type:"class"},
+				{name:"Distinctive", type:"class"},
+				{name:"Dollar", type:"class"},
+				{name:"ET", children:[
+					{name:"greys", type:"object"}
+				]},
+				{name:"Grasshopper", type:"class"},
+				{name:"Grasslands", type:"class"},
+				{name:"GreySkies", type:"class"},
+				{name:"Harmony", type:"class"},
+				{name:"IndigoNation", type:"class"},
+				{name:"Ireland", type:"class"},
+				{name:"MiamiNice", type:"class"},
+				{name:"Midwest", type:"class"},
+				{name:"Minty", type:"class"},
+				{name:"PlotKit", children:[
+					{name:"blue", type:"object"},
+					{name:"cyan", type:"object"},
+					{name:"green", type:"object"},
+					{name:"orange", type:"object"},
+					{name:"purple", type:"object"},
+					{name:"red", type:"object"}
+				]},
+				{name:"PurpleRain", type:"class"},
+				{name:"RoyalPurples", type:"class"},
+				{name:"SageToLime", type:"class"},
+				{name:"Shrooms", type:"class"},
+				{name:"Tufte", type:"class"},
+				{name:"WatersEdge", type:"class"},
+				{name:"Wetland", type:"class"}
+			]},
+			{name:"widget", children:[
+				{name:"Chart2D", type:"class"},
+				{name:"Legend", type:"class"},
+				{name:"Sparkline", type:"class"}
+			]}
+		]},
+		{name:"collections", type:"module", children:[
+			{name:"ArrayList", type:"class"},
+			{name:"BinaryTree", type:"class"},
+			{name:"Dictionary", type:"class"},
+			{name:"Queue", type:"class"},
+			{name:"Set", type:"class"},
+			{name:"SortedList", type:"class"},
+			{name:"Stack", type:"class"},
+			{name:"_base", type:"class"}
+		]},
+		{name:"color", type:"module", children:[
+			{name:"Colorspace", type:"class"},
+			{name:"Palette", type:"class"},
+			{name:"_base", type:"class"}
+		]},
+		{name:"cometd", type:"module", children:[
+			{name:"ack", type:"object"},
+			{name:"callbackPollTransport", type:"object"},
+			{name:"HttpChannels", type:"class"},
+			{name:"longPollTransport", type:"object"},
+			{name:"longPollTransportFormEncoded", type:"object"},
+			{name:"longPollTransportJsonEncoded", type:"object"},
+			{name:"RestChannels", type:"class"},
+			{name:"timestamp", type:"object"},
+			{name:"timesync", type:"object"},
+			{name:"_base", type:"class"}
+		]},
+		{name:"data", children:[
+			{name:"AndOrReadStore", type:"class"},
+			{name:"AndOrWriteStore", type:"class"},
+			{name:"AppStore", type:"class"},
+			{name:"AtomReadStore", type:"class"},
+			{name:"CdfStore", type:"class"},
+			{name:"ClientFilter", type:"class"},
+			{name:"CouchDBRestStore", type:"class"},
+			{name:"css", type:"object"},
+			{name:"CssClassStore", type:"class"},
+			{name:"CssRuleStore", type:"class"},
+			{name:"CsvStore", type:"class"},
+			{name:"dom", type:"object"},
+			{name:"FileStore", type:"class"},
+			{name:"FlickrRestStore", type:"class"},
+			{name:"FlickrStore", type:"class"},
+			{name:"GoogleFeedStore", type:"class"},
+			{name:"GoogleSearchStore", type:"class"},
+			{name:"HtmlStore", type:"class"},
+			{name:"HtmlTableStore", type:"class"},
+			{name:"ItemExplorer", type:"class"},
+			{name:"jsonPathStore", type:"object"},
+			{name:"JsonQueryRestStore", type:"class"},
+			{name:"JsonRestStore", type:"class"},
+			{name:"KeyValueStore", type:"class"},
+			{name:"OpenSearchStore", type:"class"},
+			{name:"OpmlStore", type:"class"},
+			{name:"PersevereStore", type:"class"},
+			{name:"PicasaStore", type:"class"},
+			{name:"QueryReadStore", type:"class"},
+			{name:"RailsStore", type:"class"},
+			{name:"restListener", type:"object"},
+			{name:"S3Store", type:"class"},
+			{name:"ServiceStore", type:"class"},
+			{name:"SnapLogicStore", type:"class"},
+			{name:"StoreExplorer", type:"class"},
+			{name:"util", children:[
+				{name:"JsonQuery", type:"class"}
+			]},
+			{name:"WikipediaStore", type:"class"},
+			{name:"XmlStore", type:"class"}
+		]},
+		{name:"date", children:[
+			{name:"buddhist", type:"module", children:[
+				{name:"Date", type:"class"},
+				{name:"locale", type:"object"}
+			]},
+			{name:"hebrew", type:"module", children:[
+				{name:"Date", type:"class"},
+				{name:"locale", type:"object"},
+				{name:"numerals", type:"object"}
+			]},
+			{name:"islamic", type:"module", children:[
+				{name:"Date", type:"class"},
+				{name:"locale", type:"object"}
+			]},
+			{name:"php", type:"object"},
+			{name:"posix", type:"object"},
+			{name:"relative", type:"object"},
+			{name:"timezone", type:"object"}
+		]},
+		{name:"drawing", type:"module", children:[
+			{name:"annotations", children:[
+				{name:"Angle", type:"class"},
+				{name:"Arrow", type:"class"},
+				{name:"BoxShadow", type:"class"},
+				{name:"Label", type:"class"}
+			]},
+			{name:"defaults", type:"object"},
+			{name:"Drawing", type:"class"},
+			{name:"library", children:[
+				{name:"icons", type:"object"}
+			]},
+			{name:"manager", children:[
+				{name:"Anchors", type:"class"},
+				{name:"Canvas", type:"class"},
+				{name:"keys", type:"object"},
+				{name:"Mouse", type:"class"},
+				{name:"Stencil", type:"class"},
+				{name:"StencilUI", type:"class"},
+				{name:"Undo", type:"class"},
+				{name:"_registry", type:"class"}
+			]},
+			{name:"plugins", children:[
+				{name:"drawing", children:[
+					{name:"Grid", type:"class"},
+					{name:"Silverlight", type:"class"}
+				]},
+				{name:"tools", children:[
+					{name:"Iconize", type:"class"},
+					{name:"Pan", type:"class"},
+					{name:"Zoom", type:"class"}
+				]},
+				{name:"_Plugin", type:"class"}
+			]},
+			{name:"stencil", children:[
+				{name:"Ellipse", type:"class"},
+				{name:"Image", type:"class"},
+				{name:"Line", type:"class"},
+				{name:"Path", type:"class"},
+				{name:"Rect", type:"class"},
+				{name:"Text", type:"class"},
+				{name:"_Base", type:"class"}
+			]},
+			{name:"tools", children:[
+				{name:"Arrow", type:"class"},
+				{name:"custom", children:[
+					{name:"Axes", type:"class"},
+					{name:"Equation", type:"class"},
+					{name:"Vector", type:"class"}
+				]},
+				{name:"Ellipse", type:"class"},
+				{name:"Line", type:"class"},
+				{name:"Path", type:"class"},
+				{name:"Pencil", type:"class"},
+				{name:"Rect", type:"class"},
+				{name:"TextBlock", type:"class"}
+			]},
+			{name:"ui", children:[
+				{name:"Button", type:"class"},
+				{name:"dom", children:[
+					{name:"Pan", type:"class"},
+					{name:"Toolbar", type:"class"},
+					{name:"Zoom", type:"class"}
+				]},
+				{name:"Toolbar", type:"class"},
+				{name:"Tooltip", type:"class"}
+			]},
+			{name:"util", children:[
+				{name:"common", type:"object"},
+				{name:"oo", type:"object"},
+				{name:"positioning", type:"object"}
+			]},
+			{name:"_base", type:"class"}
+		]},
+		{name:"dtl", type:"module", children:[
+			{name:"Context", type:"class"},
+			{name:"contrib", children:[
+				{name:"data", type:"object"},
+				{name:"dijit", type:"object"},
+				{name:"dom", type:"object"},
+				{name:"html", type:"object"},
+				{name:"objects", type:"object"}
+			]},
+			{name:"dom", type:"object"},
+			{name:"DomInline", type:"class"},
+			{name:"ext-dojo", children:[
+				{name:"NodeList", type:"class"}
+			]},
+			{name:"filter", children:[
+				{name:"dates", type:"object"},
+				{name:"htmlstrings", type:"object"},
+				{name:"integers", type:"object"},
+				{name:"lists", type:"object"},
+				{name:"logic", type:"object"},
+				{name:"misc", type:"object"},
+				{name:"strings", type:"object"}
+			]},
+			{name:"html", type:"object"},
+			{name:"HtmlInline", type:"class"},
+			{name:"Inline", type:"class"},
+			{name:"render", children:[
+				{name:"dom", type:"object"},
+				{name:"html", type:"object"}
+			]},
+			{name:"tag", children:[
+				{name:"date", type:"object"},
+				{name:"loader", type:"object"},
+				{name:"logic", type:"object"},
+				{name:"loop", type:"object"},
+				{name:"misc", type:"object"}
+			]},
+			{name:"utils", children:[
+				{name:"date", type:"object"}
+			]},
+			{name:"_base", type:"class"},
+			{name:"_DomTemplated", type:"class"},
+			{name:"_HtmlTemplated", type:"class"},
+			{name:"_Templated", type:"class"}
+		]},
+		{name:"editor", children:[
+			{name:"plugins", children:[
+				{name:"EntityPalette", type:"class"},
+				{name:"InsertEntity", type:"class"},
+				{name:"PageBreak", type:"class"},
+				{name:"PrettyPrint", type:"class"},
+				{name:"Preview", type:"class"},
+				{name:"Save", type:"class"},
+				{name:"ShowBlockNodes", type:"class"},
+				{name:"Smiley", type:"class"},
+				{name:"TablePlugins", type:"class"},
+				{name:"ToolbarLineBreak", type:"class"},
+				{name:"UploadImage", type:"class"},
+				{name:"_SmileyPalette", type:"class"}
+			]}
+		]},
+		{name:"embed", children:[
+			{name:"Flash", type:"class"},
+			{name:"flashVars", type:"object"},
+			{name:"IE", children:[
+				{name:"flash", type:"object"}
+			]},
+			{name:"Object", type:"class"},
+			{name:"Quicktime", type:"class"}
+		]},
+		{name:"encoding", children:[
+			{name:"ascii85", type:"object"},
+			{name:"base64", type:"object"},
+			{name:"bits", type:"object"},
+			{name:"compression", children:[
+				{name:"lzw", type:"object"},
+				{name:"splay", type:"object"}
+			]},
+			{name:"crypto", children:[
+				{name:"Blowfish", type:"class"},
+				{name:"RSAKey-ext", type:"class"},
+				{name:"RSAKey", type:"class"},
+				{name:"SimpleAES", type:"class"},
+				{name:"_base", type:"class"}
+			]},
+			{name:"digests", children:[
+				{name:"MD5", type:"class"},
+				{name:"SHA1", type:"class"},
+				{name:"_base", type:"class"}
+			]},
+			{name:"easy64", type:"object"},
+			{name:"_base", type:"class"}
+		]},
+		{name:"flash", type:"module", children:[
+			{name:"_base", type:"class"}
+		]},
+		{name:"form", children:[
+			{name:"BusyButton", type:"class"},
+			{name:"CheckedMultiSelect", type:"class"},
+			{name:"DateTextBox", type:"class"},
+			{name:"DropDownSelect", type:"class"},
+			{name:"DropDownStack", type:"class"},
+			{name:"FileInput", type:"class"},
+			{name:"FileInputAuto", type:"class"},
+			{name:"FilePickerTextBox", type:"class"},
+			{name:"FileUploader", type:"class"},
+			{name:"ListInput", type:"class"},
+			{name:"manager", children:[
+				{name:"_ClassMixin", type:"mixin"},
+				{name:"_DisplayMixin", type:"mixin"},
+				{name:"_EnableMixin", type:"mixin"},
+				{name:"_FormMixin", type:"mixin"},
+				{name:"_Mixin", type:"mixin"},
+				{name:"_NodeMixin", type:"mixin"},
+				{name:"_ValueMixin", type:"mixin"}
+			]},
+			{name:"Manager", type:"class"},
+			{name:"MultiComboBox", type:"class"},
+			{name:"PasswordValidator", type:"class"},
+			{name:"RadioStack", type:"class"},
+			{name:"RangeSlider", type:"class"},
+			{name:"Rating", type:"class"},
+			{name:"TimeSpinner", type:"class"},
+			{name:"_FormSelectWidget", type:"class"},
+			{name:"_HasDropDown", type:"class"},
+			{name:"_SelectStackMixin", type:"mixin"}
+		]},
+		{name:"fx", type:"module", children:[
+			{name:"easing", type:"object"},
+			{name:"ext-dojo", children:[
+				{name:"NodeList-style", type:"class"},
+				{name:"NodeList", type:"class"}
+			]},
+			{name:"flip", type:"object"},
+			{name:"scroll", type:"object"},
+			{name:"Shadow", type:"class"},
+			{name:"split", type:"object"},
+			{name:"style", type:"object"},
+			{name:"text", type:"object"},
+			{name:"_arg", type:"class"},
+			{name:"_base", type:"class"},
+			{name:"_core", type:"class"}
+		]},
+		{name:"gfx", type:"module", children:[
+			{name:"arc", type:"object"},
+			{name:"attach", type:"object"},
+			{name:"canvas", type:"object"},
+			{name:"canvas_attach", type:"object"},
+			{name:"decompose", type:"object"},
+			{name:"fx", type:"object"},
+			{name:"matrix", type:"object"},
+			{name:"move", type:"object"},
+			{name:"Moveable", type:"class"},
+			{name:"Mover", type:"class"},
+			{name:"path", type:"object"},
+			{name:"shape", type:"object"},
+			{name:"silverlight", type:"object"},
+			{name:"silverlight_attach", type:"object"},
+			{name:"svg", type:"object"},
+			{name:"svg_attach", type:"object"},
+			{name:"utils", type:"object"},
+			{name:"VectorText", type:"class"},
+			{name:"vml", type:"object"},
+			{name:"vml_attach", type:"object"},
+			{name:"_base", type:"class"}
+		]},
+		{name:"gfx3d", type:"module", children:[
+			{name:"gradient", type:"object"},
+			{name:"lighting", type:"object"},
+			{name:"matrix", type:"object"},
+			{name:"object", type:"object"},
+			{name:"scheduler", type:"object"},
+			{name:"vector", type:"object"},
+			{name:"_base", type:"class"}
+		]},
+		{name:"grid", children:[
+			{name:"cells", type:"module", children:[
+				{name:"dijit", type:"object"},
+				{name:"tree", type:"object"},
+				{name:"_base", type:"class"}
+			]},
+			{name:"DataGrid", type:"class"},
+			{name:"DataSelection", type:"class"},
+			{name:"enhanced", children:[
+				{name:"dnd", children:[
+					{name:"_DndBuilder", type:"class"},
+					{name:"_DndEvents", type:"class"},
+					{name:"_DndFocusManager", type:"class"},
+					{name:"_DndGrid", type:"class"},
+					{name:"_DndMover", type:"class"},
+					{name:"_DndMovingManager", type:"class"},
+					{name:"_DndRowSelector", type:"class"},
+					{name:"_DndSelectingManager", type:"class"}
+				]},
+				{name:"plugins", children:[
+					{name:"DnD", type:"class"},
+					{name:"IndirectSelection", type:"class"},
+					{name:"Menu", type:"class"},
+					{name:"NestedSorting", type:"class"}
+				]},
+				{name:"_Builder", type:"class"},
+				{name:"_Events", type:"class"},
+				{name:"_Plugin", type:"class"}
+			]},
+			{name:"EnhancedGrid", type:"class"},
+			{name:"Selection", type:"class"},
+			{name:"TreeGrid", type:"class"},
+			{name:"TreeSelection", type:"class"},
+			{name:"util", type:"object"},
+			{name:"_Builder", type:"class"},
+			{name:"_CheckBoxSelector", type:"class"},
+			{name:"_EditManager", type:"class"},
+			{name:"_Events", type:"class"},
+			{name:"_FocusManager", type:"class"},
+			{name:"_Grid", type:"class"},
+			{name:"_Layout", type:"class"},
+			{name:"_RadioSelector", type:"class"},
+			{name:"_RowManager", type:"class"},
+			{name:"_RowSelector", type:"class"},
+			{name:"_Scroller", type:"class"},
+			{name:"_Selector", type:"class"},
+			{name:"_TreeView", type:"class"},
+			{name:"_View", type:"class"},
+			{name:"_ViewManager", type:"class"}
+		]},
+		{name:"help", children:[
+			{name:"console", type:"object"},
+			{name:"_base", type:"class"}
+		]},
+		{name:"highlight", type:"module", children:[
+			{name:"languages", children:[
+				{name:"cpp", type:"object"},
+				{name:"css", type:"object"},
+				{name:"delphi", type:"object"},
+				{name:"django", type:"object"},
+				{name:"html", type:"object"},
+				{name:"javascript", type:"object"},
+				{name:"pygments", children:[
+					{name:"css", type:"object"},
+					{name:"html", type:"object"},
+					{name:"javascript", type:"object"},
+					{name:"xml", type:"object"},
+					{name:"_html", type:"class"},
+					{name:"_www", type:"class"}
+				]},
+				{name:"python", type:"object"},
+				{name:"sql", type:"object"},
+				{name:"xml", type:"object"},
+				{name:"_all", type:"class"},
+				{name:"_dynamic", type:"class"},
+				{name:"_static", type:"class"},
+				{name:"_www", type:"class"}
+			]},
+			{name:"_base", type:"class"}
+		]},
+		{name:"html", type:"module", children:[
+			{name:"ellipsis", type:"object"},
+			{name:"entities", type:"object"},
+			{name:"format", type:"object"},
+			{name:"metrics", type:"object"},
+			{name:"styles", type:"object"},
+			{name:"_base", type:"class"}
+		]},
+		{name:"image", type:"module", children:[
+			{name:"Badge", type:"class"},
+			{name:"FlickrBadge", type:"class"},
+			{name:"Gallery", type:"class"},
+			{name:"Lightbox", type:"class"},
+			{name:"LightboxNano", type:"class"},
+			{name:"Magnifier", type:"class"},
+			{name:"MagnifierLite", type:"class"},
+			{name:"SlideShow", type:"class"},
+			{name:"ThumbnailPicker", type:"class"},
+			{name:"_base", type:"class"}
+		]},
+		{name:"io", children:[
+			{name:"httpParse", type:"object"},
+			{name:"OAuth", type:"class"},
+			{name:"proxy", children:[
+				{name:"xip", type:"object"}
+			]},
+			{name:"scriptFrame", type:"object"},
+			{name:"windowName", type:"object"},
+			{name:"xhrMultiPart", type:"object"},
+			{name:"xhrPlugins", type:"object"},
+			{name:"xhrScriptPlugin", type:"object"},
+			{name:"xhrWindowNamePlugin", type:"object"}
+		]},
+		{name:"jq", type:"object"},
+		{name:"json", children:[
+			{name:"query", type:"object"},
+			{name:"ref", type:"object"},
+			{name:"schema", type:"object"}
+		]},
+		{name:"jsonPath", type:"module", children:[
+			{name:"query", type:"object"}
+		]},
+		{name:"lang", children:[
+			{name:"aspect", type:"module"}, // All modules listed below get mixed into the aspect NS.
+			//{name:"aspect", type:"module"}, children:[
+				//{name:"cflow", type:"object"},
+				//{name:"counter", type:"object"},
+				//{name:"memoizer", type:"object"},
+				//{name:"memoizerGuard", type:"object"},
+				//{name:"profiler", type:"object"},
+				//{name:"timer", type:"object"},
+				//{name:"tracer", type:"object"}
+			//]},
+			{name:"functional", type:"module"}, // All modules are included in here, since they all just extend this NS.
+			//{name:"functional", type:"module", children:[
+			//	{name:"array", type:"object"},
+			//	{name:"binrec", type:"object"},
+			//	{name:"curry", type:"object"},
+			//	{name:"fold", type:"object"},
+			//	{name:"lambda", type:"object"},
+			//	{name:"linrec", type:"object"},
+			//	{name:"listcomp", type:"object"},
+			//	{name:"multirec", type:"object"},
+			//	{name:"numrec", type:"object"},
+			//	{name:"object", type:"object"},
+			//	{name:"reversed", type:"object"},
+			//	{name:"scan", type:"object"},
+			//	{name:"sequence", type:"object"},
+			//	{name:"tailrec", type:"object"},
+			//	{name:"util", type:"object"},
+			//	{name:"zip", type:"object"}
+			//]},
+			{name:"mix", type:"object"},
+			{name:"observable", type:"object"},
+			{name:"oo", children:[
+				{name:"aop", type:"object"},
+				{name:"declare-x", type:"object"},
+				{name:"declare", type:"object"},
+				{name:"Decorator", type:"class"},
+				{name:"Filter", type:"class"},
+				{name:"general", type:"object"},
+				{name:"mixin", type:"object"},
+				{name:"rearrange", type:"object"}
+			]},
+			{name:"typed", type:"object"},
+			{name:"utils", type:"object"}
+		]},
+		{name:"layout", children:[
+			{name:"BorderContainer", type:"class"},
+			{name:"ContentPane", type:"class"},
+			{name:"dnd", children:[
+				{name:"Avatar", type:"class"},
+				{name:"PlottedDnd", type:"class"}
+			]},
+			{name:"DragPane", type:"class"},
+			{name:"ExpandoPane", type:"class"},
+			{name:"ext-dijit", children:[
+				{name:"layout", children:[
+					{name:"StackContainer-touch", type:"class"}
+				]}
+			]},
+			{name:"FloatingPane", type:"class"},
+			{name:"GridContainer", type:"class"},
+			{name:"RadioGroup", type:"class"},
+			{name:"ResizeHandle", type:"class"},
+			{name:"RotatorContainer", type:"class"},
+			{name:"ScrollPane", type:"class"},
+			{name:"TableContainer", type:"class"},
+			{name:"ToggleSplitter", type:"class"}
+		]},
+		{name:"math", type:"module", children:[
+			{name:"BigInteger-ext", type:"class"},
+			{name:"BigInteger", type:"class"},
+			{name:"curves", type:"object"},
+			{name:"matrix", type:"object"},
+			{name:"random", children:[
+				{name:"prng4", type:"object"},
+				{name:"Secure", type:"class"},
+				{name:"Simple", type:"class"}
+			]},
+			{name:"round", type:"object"},
+			{name:"stats", type:"object"},
+			{name:"_base", type:"class"}
+		]},
+		{name:"off", type:"module", children:[
+			{name:"files", type:"object"},
+			{name:"offline", type:"object"},
+			{name:"sync", type:"object"},
+			{name:"ui", type:"object"},
+			{name:"_common", type:"class"}
+		]},
+		{name:"portlet", type:"object"},
+		{name:"robot", children:[
+			{name:"recorder", type:"object"}
+		]},
+		{name:"rpc", children:[
+			{name:"Client", type:"class"},
+			{name:"JsonRest", type:"class"},
+			{name:"JsonRPC", type:"class"},
+			{name:"OfflineRest", type:"class"},
+			{name:"ProxiedPath", type:"class"},
+			{name:"Rest", type:"class"},
+			{name:"Service", type:"class"}
+		]},
+		{name:"secure", children:[
+			{name:"capability", type:"object"},
+			{name:"DOM", type:"class"},
+			{name:"sandbox", type:"object"}
+		]},
+		{name:"sketch", type:"module", children:[
+			{name:"Anchor", type:"class"},
+			{name:"Annotation", type:"class"},
+			{name:"DoubleArrowAnnotation", type:"class"},
+			{name:"Figure", type:"class"},
+			{name:"LeadAnnotation", type:"class"},
+			{name:"PreexistingAnnotation", type:"class"},
+			{name:"SingleArrowAnnotation", type:"class"},
+			{name:"Slider", type:"class"},
+			{name:"Toolbar", type:"class"},
+			{name:"UnderlineAnnotation", type:"class"},
+			{name:"UndoStack", type:"class"},
+			{name:"_Plugin", type:"class"}
+		]},
+		{name:"sql", type:"module", children:[
+			{name:"_base", type:"class"},
+			{name:"_crypto", type:"class"}
+		]},
+		{name:"storage", type:"module", children:[
+			{name:"AirDBStorageProvider", type:"class"},
+			{name:"AirEncryptedLocalStorageProvider", type:"class"},
+			{name:"AirFileStorageProvider", type:"class"},
+			{name:"FlashStorageProvider", type:"class"},
+			{name:"GearsStorageProvider", type:"class"},
+			{name:"manager", type:"object"},
+			{name:"Provider", type:"class"},
+			{name:"WhatWGStorageProvider", type:"class"},
+			{name:"_common", type:"class"}
+		]},
+		{name:"string", children:[
+			{name:"BidiComplex", type:"class"},
+			{name:"Builder", type:"class"},
+			{name:"sprintf", type:"object"},
+			{name:"tokenize", type:"object"}
+		]},
+		{name:"testing", children:[
+			{name:"DocTest", type:"class"}
+		]},
+		{name:"timing", type:"module", children:[
+			{name:"doLater", type:"object"},
+			{name:"Sequence", type:"class"},
+			{name:"Streamer", type:"class"},
+			{name:"ThreadPool", type:"class"},
+			{name:"_base", type:"class"}
+		]},
+		{name:"uuid", type:"module", children:[
+			{name:"generateRandomUuid", type:"object"},
+			{name:"generateTimeBasedUuid", type:"object"},
+			{name:"Uuid", type:"class"},
+			{name:"_base", type:"class"}
+		]},
+		{name:"validate", type:"module", children:[
+			{name:"br", type:"object"},
+			{name:"ca", type:"object"},
+			{name:"check", type:"object"},
+			{name:"creditCard", type:"object"},
+			{name:"isbn", type:"object"},
+			{name:"regexp", type:"object"},
+			{name:"us", type:"object"},
+			{name:"web", type:"object"},
+			{name:"_base", type:"class"}
+		]},
+		{name:"widget", children:[
+			{name:"AnalogGauge", type:"class"},
+			{name:"AutoRotator", type:"class"},
+			{name:"BarGauge", type:"class"},
+			{name:"Calendar", type:"class"},
+			{name:"CalendarFx", type:"class"},
+			{name:"CalendarViews", type:"class"},
+			{name:"ColorPicker", type:"class"},
+			{name:"DataPresentation", type:"class"},
+			{name:"Dialog", type:"class"},
+			{name:"DocTester", type:"class"},
+			{name:"DynamicTooltip", type:"class"},
+			{name:"FeedPortlet", type:"class"},
+			{name:"FilePicker", type:"class"},
+			{name:"FisheyeList", type:"class"},
+			{name:"FisheyeLite", type:"class"},
+			{name:"gauge", children:[
+				{name:"AnalogArcIndicator", type:"class"},
+				{name:"AnalogArrowIndicator", type:"class"},
+				{name:"AnalogNeedleIndicator", type:"class"},
+				{name:"BarIndicator", type:"class"},
+				{name:"_Gauge", type:"class"}
+			]},
+			{name:"Iterator", type:"class"},
+			{name:"Loader", type:"class"},
+			{name:"Pager", type:"class"},
+			{name:"PlaceholderMenuItem", type:"class"},
+			{name:"Portlet", type:"class"},
+			{name:"Roller", type:"class"},
+			{name:"RollingList", type:"class"},
+			{name:"rotator", children:[
+				{name:"Controller", type:"class"},
+				{name:"Fade", type:"class"},
+				{name:"Pan", type:"class"},
+				{name:"Slide", type:"class"},
+				{name:"Wipe", type:"class"}
+			]},
+			{name:"Rotator", type:"class"},
+			{name:"SortList", type:"class"},
+			{name:"Standby", type:"class"},
+			{name:"Toaster", type:"class"},
+			{name:"UpgradeBar", type:"class"},
+			{name:"Wizard", type:"class"}
+		]},
+		{name:"wire", type:"module", children:[
+			{name:"CompositeWire", type:"class"},
+			{name:"DataWire", type:"class"},
+			{name:"ml", children:[
+				{name:"Action", type:"class"},
+				{name:"Data", type:"class"},
+				{name:"DataStore", type:"class"},
+				{name:"Invocation", type:"class"},
+				{name:"Service", type:"class"},
+				{name:"Transfer", type:"class"},
+				{name:"util", type:"object"}
+			]},
+			{name:"TableAdapter", type:"class"},
+			{name:"TextAdapter", type:"class"},
+			{name:"TreeAdapter", type:"class"},
+			{name:"Wire", type:"class"},
+			{name:"XmlWire", type:"class"},
+			{name:"_base", type:"class"}
+		]},
+		{name:"xml", children:[
+			{name:"DomParser", type:"class"},
+			{name:"parser", type:"object"},
+			{name:"Script", type:"class"},
+			{name:"widgetParser", type:"object"}
+		]},
+		{name:"xmpp", children:[
+			{name:"bosh", type:"object"},
+			{name:"ChatService", type:"class"},
+			{name:"PresenceService", type:"class"},
+			{name:"RosterService", type:"class"},
+			{name:"sasl", type:"object"},
+			{name:"TransportSession", type:"class"},
+			{name:"UserService", type:"class"},
+			{name:"util", type:"object"},
+			{name:"widget", children:[
+				{name:"ChatSession", type:"class"}
+			]},
+			{name:"xmppSession", type:"object"}
+		]}
+	]}
+]
