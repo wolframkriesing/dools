@@ -1,0 +1,232 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+		"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+
+	<title>dools.markup - client-side markup parser | The Dojo Toolkit</title>
+
+	<style type="text/css">
+		@import "../../../dijit/tests/css/dijitTests.css";
+
+		/* additional styling for this test case */
+		textarea {
+			width: 100%;
+			height: 28em;
+			font-size: 12px;
+		}
+
+		.markupPreview {
+			background: #eee;
+			border: 1px solid #aaa;
+			min-height: 28em;
+			max-height: 28em;
+			overflow: auto;
+			clear: both;
+			font-size: 12px;
+		}
+
+		.leftBlock {
+			float: left;
+			width: 49%;
+		}
+
+		.rightBlock {
+			float: right;
+			width: 49%;
+		}
+
+		.clearing {
+			clear: both;
+		}
+	</style>
+
+	<script type="text/javascript" djConfig="parseOnLoad: true, isDebug: true" src="../../../dojo/dojo.js"></script>
+	<script type="text/javascript" src="../Parser.js"></script>
+
+	<script type="text/javascript">
+		// load dools.markup.parser
+		dojo.require("dools.markup.Parser");
+
+		// we need some language definitions:
+		dojo.require("dools.markup.language.Textile");
+		dojo.require("dools.markup.language.Markdown");
+		dojo.require("dools.markup.language.Mediawiki");
+
+		var examples = {
+			'Markdown':
+				"Settext h1 header"+
+				"\n==================\n\n"+
+				"## This _is_ a section\n\n"+
+				"### Another section **with inner token** ###\n\n"+
+				"And simple text here and there.\n\n"+
+				"This is [an example](http://example.com/ \"Title\") inline link.\n"+
+				"This is [a reference-style link][1] (link definition is at the end of this text)\n"+
+				"And here is an autolink: <address@example.com> (emails encoded automatically)\n\n"+
+				"This is an inline image: ![Alt text](/path/to/img.jpg \"Title\").\n\n"+
+				"* unordered list\n"+
+				"  1. ordered\n"+
+				"  2. list\n"+
+				"     + with\n"+
+				"     + a few elems\n"+
+				"     + inside\n"+
+				"  3. here\n"+
+				"* last elem\n\n"+
+				"> simple blockquote\n"+
+				"> here\n"+
+				"this is a continuation\n"+
+				"of blockquote\n\n"+
+				"This is a code block:\n\n"+
+				"    <div class=\"footer\">\n"+
+				"        &copy; 2004 Foo Corporation\n"+
+				"    </div>\n\n"+
+				"This is an `inline code span`\n\n"+
+				"But \\`this is not inline code span\\`\n\n\n"+
+				"_____\n\n"+
+				"  [1]: http://example.com/ \"Optional title\"\n",
+			'Textile':
+				"h2. \"Textile\":http://textile.thresholdstate.com/ implementation in JavaScript\n\n"+
+				"h3(red#main). Header with id and class\n\n"+
+				"bq{color:#888}[en]. Blockquote with custom style and lang. Lorem ipsum\n"+
+				"dolor sit amet, consectetuer adipiscing elit.\n\n"+
+				"pre((()))). Pre with padding. Aliquam hendrerit mi posuere lectus.\n"+
+				"Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.\n\n"+
+				"p((((){display:block}[en](class#id))). Let's try to break something.\n\n"+
+				"*{color:darkblue} Item number 1\n"+
+				"##{color:darkgreen} Item number 1a\n"+
+				"## Item number 1b\n"+
+				"* Item number 2\n"+
+				"* Item number 3\n\n"+
+				"table(class#id)[en]. \n"+
+				"^{color:darkred}<>. |_\\1\/2-. a|_. b|_. c|_. d|\n"+
+				"|1|2|3|\n\n"+
+				"More simple table goes below:\n\n"+
+				"|_. a|_. table|_. header|\n"+
+				"|a|table|row|\n"+
+				"|a|table|row|\n\n"+
+				"Span elements testing.\n"+
+				"Sed *(#span)ut _perspiciatis_, unde* omnis iste -- natus -error- +sit+ voluptatem accusantium[1].\n"+
+				"Image: !/img/img.gif (test image)!\n"+
+				"Image inside link: !/img/img.gif(image)!:http://example.com\n\n"+
+				"fn1. Footnote\n\n"+
+				"\n",
+			'Mediawiki':
+				"This '''is''' [http://www.mediawiki.org/ MediaWiki] ''syntax''.\n\n"+
+				"= This is a section =\n\n"+
+				"* Here are a few\n"+
+				"* bullet points\n\n"+
+				"== Sub-section ==\n\n"+
+				"# This\n"+
+				"# is\n"+
+				"# in\n"+
+				"# order!"
+		};
+		var syntax_name = 'none';
+		var output = 'output_textarea';
+		var convertTextTimer;
+
+		function process()
+		{
+  console.log(syntax_name);
+			var syntax = new dools.markup.language[syntax_name];
+			var parser = new dools.markup.Parser(syntax);
+			var html = parser.parse(dojo.byId('input').value);
+console.log(html);
+			var out = dojo.byId(output);
+			if(output == 'output_textarea')
+				dojo.byId(output).value = html;
+			else
+				dojo.byId(output).innerHTML = html;
+		}
+
+		function set_syntax()
+		{
+			var syntax_select = dojo.byId('syntax_select');
+			var value = syntax_select.options[syntax_select.selectedIndex].text;
+
+			dojo.byId('input').value = examples[value];
+			if(output == 'output_textarea')
+				dojo.byId(output).value = '';
+			else
+				dojo.byId(output).innerHTML = '';
+			syntax_name = value;
+			process();
+		}
+
+		function set_output_view()
+		{
+			var output_view_select = dojo.byId('output_view_select');
+			var value = output_view_select.options[output_view_select.selectedIndex].text;
+			if(value == 'Html source'){
+				dojo.byId('output_div').style.display = "none";
+				dojo.byId('output_textarea').style.display = "block";
+				dojo.byId('output_textarea').value = dojo.byId('output_div').innerHTML;
+				output = 'output_textarea';
+			}else if(value == 'Preview'){
+				dojo.byId('output_textarea').style.display = "none";
+				dojo.byId('output_div').style.display = "block";
+				dojo.byId('output_div').innerHTML = dojo.byId('output_textarea').value;
+				output = 'output_div';
+			}
+		}
+
+		function on_input_change()
+		{
+			if(!dojo.byId("autoupdate").checked)
+				return;
+
+			if(convertTextTimer){
+				window.clearTimeout(convertTextTimer);
+				convertTextTimer = undefined;
+			}
+
+			convertTextTimer = window.setTimeout(process, 500);
+		}
+
+		dojo.addOnLoad(set_syntax);
+		dojo.addOnLoad(set_output_view);
+		dojo.addOnLoad(process);
+	</script>
+</head>
+<body>
+
+	<h1 class="testTitle">dools.markup</h1>
+	<p>Client-side markup parser</p>
+
+	<h2>Examples:</h2>
+
+	<div class="leftBlock">
+		<p style="float:left;">Input text &darr;</p>
+
+		<p style="float:right">
+			<small>syntax:</small>
+			<select id="syntax_select" onchange="set_syntax()">
+				<option>Markdown</option>
+				<option selected="selected">Textile</option>
+				<option>Mediawiki</option>
+			</select>
+		</p>
+
+		<textarea id="input" onkeyup="on_input_change()"></textarea>
+	</div>
+
+	<div class="rightBlock">
+		<p style="float:left;">Parse results &darr;</p>
+
+		<p style="float:right">
+			<small>view:</small>
+			<select id="output_view_select" onchange="set_output_view()">
+				<option selected="selected">Html source</option>
+				<option>Preview</option>
+			</select>
+			<input id="autoupdate" type="checkbox" checked="true"/> <small>autoupdate</small>
+		</p>
+		<textarea id="output_textarea" class="markupPreview" readonly="readonly"></textarea>
+		<div id="output_div" style="display:none" class="markupPreview"></div>
+	</div>
+
+	<div class="clearing">&nbsp;</div>
+
+	<button onclick="process()">Process</button>
+
+	<div class="clearing">&nbsp;</div>
+</body><html>

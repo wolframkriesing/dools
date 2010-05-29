@@ -1,0 +1,135 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+		"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+
+	<title>dools.markup - client-side markup parser | The Dojo Toolkit</title>
+
+	<style type="text/css">
+		@import "../../../dijit/tests/css/dijitTests.css";
+
+		/* additional styling for this test case */
+		textarea {
+			width: 100%;
+			height: 17em;
+		}
+
+		#syntax {
+			height: 38em;
+		}
+
+		.leftBlock {
+			float: left;
+			width: 49%;
+		}
+
+		.rightBlock {
+			float: right;
+			width: 49%;
+		}
+
+		.clearing {
+			clear: both;
+		}
+	</style>
+
+	<script type="text/javascript" djConfig="parseOnLoad: true, isDebug: true" src="../../../dojo/dojo.js"></script>
+	<script type="text/javascript" src="../Parser.js"></script>
+
+	<script type="text/javascript">
+		// load dools.markup.parser
+		dojo.require("dools.markup.Parser");
+
+		// we need some language definitions:
+		//dojo.require("dools.markup.language.Markdown");
+
+		function process()
+		{
+			eval(dojo.byId('syntax').value);
+			//var parser = new dools.markup.Parser(new dools.markup.language.Markdown);
+			var parser = new dools.markup.Parser( testSyntax );
+			var html = parser.parse(dojo.byId('input').value);
+			dojo.byId('output').value = html;
+		}
+
+		//dojo.addOnLoad(process);
+	</script>
+</head>
+<body>
+
+	<h1 class="testTitle">dools.markup</h1>
+	<p>Client-side markup parser</p>
+
+	<h2>Examples:</h2>
+
+	<div class="leftBlock">
+		<p>Input text:</p>
+		<textarea id="input">
+> this is
+a blockquote
+with a continuation
+
+This is not > a block quote
+
+> This is a
+> > nested block
+> > quote.
+		</textarea>
+
+		<p>Parse results (html output):</p>
+		<textarea id="output" class="markupPreview" readonly="readonly"></textarea>
+	</div>
+
+	<div class="rightBlock">
+		<p>Syntax defnition:</p>
+		<textarea id="syntax">
+var testSyntax = {
+	tokens: [
+		// blockquotes
+		{ start: '>\\s*', end: '\n(?=[\n>\\* ])',
+		  mode: 'blockquoteLine',
+		  restoreEnd: [0],
+		  args: {grouped: true},
+		  token: dools.markup.BlockquoteToken
+		},
+		{ start: '\n(?=>)',
+		  mode: 'blockquoteLine',
+		  args: {grouped: true},
+		  token: dools.markup.BlockquoteToken
+		},
+
+		// very simple list item for test
+		{ start: '\\*(.*)',
+		  mode: 'listItem',
+		  token: dools.markup.ListItemToken
+		},
+		{ start: '\n',
+		  mode: 'text',
+		  token: dools.markup.TextToken
+		},
+		{ start: '\\s+>',
+		  mode: 'text',
+		  token: dools.markup.TextToken
+		},
+		{ start: '\\s*[-A-Za-z0-9\\.\\,]+',
+		  mode: 'text',
+		  token: dools.markup.TextToken
+		},
+		// for stray whitespace at the end of the buffer (eliminates the
+		// "Cutting one char from input text" warning).
+		{ start: '\\s+$',
+		  mode: 'text',
+		  token: dools.markup.TextToken
+		}
+	]
+};
+		</textarea>
+	</div>
+
+	<div class="clearing">&nbsp;</div>
+
+	<button onclick="process()">Process</button>
+
+
+	<div class="clearing">&nbsp;</div>
+</body><html>
