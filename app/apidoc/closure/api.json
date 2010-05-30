@@ -1,36 +1,28 @@
 [
 	{name:"goog", type:"module", children:[
-		{name:"array", children:[
-			{name:"array", type:"object"}
-		]},
-		{name:"asserts", children:[
-			{name:"asserts", type:"object"}
-		]},
+		{name:"array", type:"object"},
+		{name:"asserts", type:"object"},
 		{name:"async", children:[
 			{name:"conditionaldelay", type:"object"},
 			{name:"delay", type:"object"}
 		]},
 		{name:"base", type:"object"},
-		{name:"color", children:[
+		{name:"color", type:"object", children:[
 			{name:"alpha", type:"object"},
-			{name:"color", type:"object"},
 			{name:"names", type:"object"}
 		]},
-		{name:"crypt", children:[
+		{name:"crypt", type:"object", children:[
 			{name:"base64", type:"object"},
 			{name:"basen", type:"object"},
-			{name:"crypt", type:"object"},
 			{name:"hash32", type:"object"}
 		]},
-		{name:"cssom", children:[
-			{name:"cssom", type:"object"},
+		{name:"cssom", type:"object", children:[
 			{name:"iframe", children:[
 				{name:"style", type:"object"}
 			]}
 		]},
-		{name:"datasource", children:[
+		{name:"datasource", type:"object", children:[
 			{name:"datamanager", type:"object"},
-			{name:"datasource", type:"object"},
 			{name:"expr", type:"object"},
 			{name:"fastdatanode", type:"object"},
 			{name:"jsdatasource", type:"object"},

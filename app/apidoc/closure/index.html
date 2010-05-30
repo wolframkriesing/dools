@@ -148,10 +148,10 @@
 	
 	<script type="text/javascript" src="../../../../dojo/dojo.js" djConfig="isDebug:true, parseOnLoad:true"></script>
 	<script type="text/javascript">
-		dojo.require("dools.docs.setup");
+		dojo.require("dools.docs.setup.jsDoc");
 		dojo.require("dools.app.apidoc._base");
 		
-		dools.docs.setup.load = function(/*String*/moduleName, /*String?*/methodName){
+		dools.docs.setup.jsDoc.load = function(/*String*/moduleName, /*String?*/methodName){
 			// Fake that a dojo module would exist.
 			var loadableModuleName = this.getLoadableModuleName(moduleName, methodName);
 			if (dojo.isObject(loadableModuleName)){
@@ -162,13 +162,17 @@
 			try{
 				window.eval(content);
 			}catch(e){}
-		}
+		};
 		
-		dools.docs.setup.module2FilesMap = {
+		dools.docs.setup.jsDoc.module2FilesMap = {
 			"goog":{requires:null, files:["goog/base.js"]},
 			"goog.array":{requires:null, files:["goog/array/array.js"]},
 			"goog.crypt.base64":{requires:null, files:["goog/crypt/base64.js"]},
 			"goog.date.relative":{requires:null, files:["goog/date/relative.js"]},
+		};
+		
+		dools.docs.setup.jsDoc.require = function(){
+			
 		};
 		
 		new dools.app.apidoc({docSyntax:"jsDoc"});
