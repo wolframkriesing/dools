@@ -36,8 +36,8 @@ Using svn
 	%> svn co http://svn.dojotoolkit.org/src/dojo/trunk dojo
 	%> svn co http://svn.dojotoolkit.org/src/dijit/trunk dijit
 	%> svn co http://svn.dojotoolkit.org/src/dojox/trunk dojox
-	%> svn co http://svn.dojotoolkit.org/src/util/trunk util
-	%> svn co http://svn.github.com/wolframkriesing/dools.git
+	%> svn co http://svn.dojotoolkit.org/src/util/trunk util     # You need this to run the tests.
+	%> svn co http://svn.github.com/wolframkriesing/dools.git dools
 	...
 	%> ls
 	dijit/
