@@ -1,0 +1,39 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<title>EmbedJS api.json</title>
+</head>
+<body>
+	Simply copy+paste the content below into the api.json file and you got it :)
+	<br /><br /><br /><br />
+	<pre>
+[
+	//
+	//	Dojo
+	//
+	{name:"dojo", type:"module", children:[</pre>
+	<pre id="apiJson"></pre>
+	<pre>
+	]}
+]</pre>
+	<script type="text/javascript" src="src/embed-kitchensink-android.uncompressed.js"></script>
+	<script type="text/javascript">
+		var api = [];
+		for (var i in embedjs) if (i.substr(0,1)!="_") api.push(i);
+		// Sort case independent
+		api.sort(function(a, b){ return a.toLowerCase() > b.toLowerCase()});
+		for (var i=0, l=api.length, obj; i<l; i++){
+			obj = api[i];
+			var realType = typeof embedjs[obj];
+			if (realType=="undefined"){ // Stuff like "baseUrl" is undefined, shouldnt appear in the API docs yet, we have no PropertyView yet.
+				continue;
+			}
+			var objType = realType=="function" ? "method" : realType;
+			if (obj.substr(0, 1) == obj.substr(0, 1).toUpperCase()){
+				objType = "class";
+			}
+			document.getElementById("apiJson").innerHTML += "\t\t"+JSON.stringify({name:obj, type:objType})+",\n";
+		}
+	</script>
+</body>
+</html>
