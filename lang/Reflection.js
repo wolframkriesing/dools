@@ -152,6 +152,7 @@ dojo.declare(
 			// 		but calling getMethod() everytime inside the for-loop doesnt seem to impressive either,
 			// 		better solutions please come forward.
 			if (this.methodName){
+// TODO make this more efficient, it makes getMethods() go through all methods though we only need ONE
 				return this.getMethods(includeInherited)[this.methodName];
 			}
 			return null;
