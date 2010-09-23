@@ -1,0 +1,98 @@
+[
+	// The structure is like this:
+	// 
+	//{
+	//	name:"whatever",				Title that shall appear in the tree.
+	//	type:"class|module|method",		This is optional, if you leave out the type it will be rendered like a folder and will expand/collapse the tree on click.
+	//	moduleName:"dojo.data"			The complete module name, which could be used directly in code.
+	//	children:[						If there shall be child nodes list them in here.
+	//		{label:"dojo.xhr", type:"method", moduleName:"dojo.xhr"},
+	//
+		
+	{label:"Array functions", children:[
+		{"label":"dojo.every","type":"method"},
+		{"label":"dojo.filter","type":"method"},
+		{"label":"dojo.forEach","type":"method"},
+		{"label":"dojo.lastIndexOf","type":"method"},
+		{"label":"dojo.map","type":"method"},
+		{"label":"dojo.some","type":"method"},
+	]},
+	
+	{label:"CSS functions", children:[
+		{label:"dojo.addClass", "type":"method"},
+		{"label":"dojo.getComputedStyle","type":"method"},
+		{"label":"dojo.hasClass","type":"method"},
+		{"label":"dojo.removeClass","type":"method"},
+		{"label":"dojo.toggleClass","type":"method"},
+		{"label":"dojo.style","type":"method"},
+	]},
+	
+	{label:"DOM functions", children:[
+		{"label":"dojo.addOnLoad","type":"method"},
+		{"label":"dojo.body","type":"method"},
+		{"label":"dojo.byId","type":"method"},
+		{"label":"dojo.clone","type":"method"},
+		{"label":"dojo.create","type":"method"},
+		{"label":"dojo.empty","type":"method"},
+		{"label":"dojo.place","type":"method"},
+		{"label":"dojo.replace","type":"method"},
+		{"label":"dojo.query","type":"method"},
+	]},
+	
+	{label:"OO functions", children:[
+		{"label":"dojo.declare","type":"method"},
+		{"label":"dojo.delegate","type":"method"},
+		{"label":"dojo.extend","type":"method"},
+		{"label":"dojo.mixin","type":"method"},
+	]},
+	
+	{label:"Language extensions", children:[
+		{"label":"dojo.connect","type":"method"},
+		{"label":"dojo.connectPublisher","type":"method"},
+		{"label":"dojo.declare","type":"method"},
+		{"label":"dojo.Deferred","type":"class"},
+		{"label":"dojo.delegate","type":"method"},
+		{"label":"dojo.disconnect","type":"method"},
+		{"label":"dojo.fromJson","type":"method"},
+		{"label":"dojo.getObject","type":"method"},
+		{"label":"dojo.hitch","type":"method"},
+		{"label":"dojo.indexOf","type":"method"},
+		{"label":"dojo.isAlien","type":"method"},
+		{"label":"dojo.isArray","type":"method"},
+		{"label":"dojo.isArrayLike","type":"method"},
+		{"label":"dojo.isFunction","type":"method"},
+		{"label":"dojo.isNumber","type":"method"},
+		{"label":"dojo.isNumeric","type":"method"},
+		{"label":"dojo.isObject","type":"method"},
+		{"label":"dojo.isString","type":"method"},
+		{"label":"dojo.toJson","type":"method"},
+		{"label":"dojo.trim","type":"method"},
+		{"label":"dojo.setObject","type":"method"},
+		{"label":"dojo.subscribe","type":"method"},
+		{"label":"dojo.unsubscribe","type":"method"},
+		{"label":"dojo.when","type":"method"},
+	]},
+	
+	{label:"Communication", children:[
+		{"label":"dojo.rawXhrPost","type":"method"},
+		{"label":"dojo.rawXhrPut","type":"method"},
+		{"label":"dojo.xhr","type":"method"},
+		{"label":"dojo.xhrDelete","type":"method"},
+		{"label":"dojo.xhrGet","type":"method"},
+		{"label":"dojo.xhrPost","type":"method"},
+		{"label":"dojo.xhrPut","type":"method"},
+	]},
+	
+	{label:"????", children:[
+		{"label":"dojo.destroy","type":"method"},
+		{"label":"dojo.fixEvent","type":"method"},
+		{"label":"dojo.jsonp","type":"method"},
+		{"label":"dojo.moduleUrl","type":"method"},
+		{"label":"dojo.objectToQuery","type":"method"},
+		{"label":"dojo.provide","type":"method"},
+		{"label":"dojo.publish","type":"method"},
+		{"label":"dojo.require","type":"method"},
+		{"label":"dojo.safeMixin","type":"method"},
+		{"label":"dojo.stopEvent","type":"method"},
+	]},
+]
