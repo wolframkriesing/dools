@@ -153,7 +153,9 @@ dojo.declare(
 			// >>> d && d.length>0
 			// true
 			var src = this.sourceCode;
-			var regex = new RegExp(name + "\\s*:\\s*function\\s*\\("); // Simple regex to fail fast, if this string is not in there, it's not this case.
+			// prefix with "\s" so it wont find methods that are e.g. prefixed with "_"
+// TODO write test case for it
+			var regex = new RegExp("\\s" + name + "\\s*:\\s*function\\s*\\("); // Simple regex to fail fast, if this string is not in there, it's not this case.
 			var search = src.match(regex);
 			if (search!=null){ // If the method can be found parse the parameters. Sometimes the introspection is not perfect :-)
 				return this._prepareMethodReturnData(name, search, search.index + search[0].length);
