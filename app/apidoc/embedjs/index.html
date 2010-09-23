@@ -93,7 +93,11 @@
 			return ["src/embed-kitchensink-android.uncompressed.js"];
 		};
 		dools.docs.setup.dojo.createObjectInfo = function(params){
-			params.objectName = "embedjs";
+			if (!params.objectName){
+				params.objectName = "embedjs";
+			} else {
+				params.objectName = params.objectName.replace(/^dojo/, "embedjs");
+			}
 			var className = this.docSyntax.substring(0,1).toUpperCase() + this.docSyntax.substring(1);
 			return new dools.docs.objectInfo[className](params);
 		};
