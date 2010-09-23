@@ -35,8 +35,8 @@ dools.docs.widget._apiData = {
 		// summary: Convert the data we retreive from e.g. dojoApi.json into data that the
 		// 		ItemFileReadStore understands.
 		this._idCounter = 0;
-		var ret = [], el, d,
-			childEls = null;
+		var ret = [], el, d;
+		var childEls = null;
 		for (var i=0, l=data.length; i<l; i++){
 			this._idCounter++;
 			// Copy everything from the JSON file (data[i]) but the "children".
@@ -71,7 +71,7 @@ dools.docs.widget._apiData = {
 				var el = {
 					id:this._idCounter,
 					label: d.label || d.name,
-					moduleName:d.moduleName || (moduleName+"."+d.name)
+					moduleName:d.moduleName || ((moduleName ?moduleName + "." : "") + d.name)
 				};
 				for (var key in d){
 					if (key=="children" || key=="moduleName") continue;
