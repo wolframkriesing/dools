@@ -4,8 +4,8 @@
 	<title>EmbedJS api.json</title>
 </head>
 <body>
-	Simply copy+paste the content below into the api.json file and you got it :)
-	<br /><br /><br /><br />
+	// Simply copy+paste the content below into the api.json file and you got it :)
+	<br />
 	<pre>
 [
 	//
@@ -25,7 +25,7 @@
 		for (var i=0, l=api.length, obj; i<l; i++){
 			obj = api[i];
 			var realType = typeof embedjs[obj];
-			if (realType=="undefined"){ // Stuff like "baseUrl" is undefined, shouldnt appear in the API docs yet, we have no PropertyView yet.
+			if (realType!="function"){ // Stuff like "baseUrl", "config", "global" and "doc" are either object or undefined, shouldnt appear in the API docs yet, we have no PropertyView yet.
 				continue;
 			}
 			var objType = realType=="function" ? "method" : realType;

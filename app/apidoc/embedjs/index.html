@@ -42,15 +42,13 @@
 			<div class="naviPane" dojoType="dojox.layout.ExpandoPane" splitter="true" duration="125" region="left" title="Navigation" maxWidth="275">
 				<div dojoType="dijit.layout.TabContainer" tabStrip="true">
 					<div dojoType="dijit.layout.ContentPane" title="API">
-						<!--<div class="loading">Loading...</div>-->
 						<div dojoType="dools.docs.widget.ApiTree" style="padding-top: 5px;"
 							urls="api.json"></div>
 					</div>
-					<div dojoType="dijit.layout.ContentPane" title="Topics">
-						<!--<div class="loading">Loading...</div>-->
-						<div dojoType="dools.docs.widget.ApiTree" style="padding-top: 5px;"
-							urls="topics.json"></div>
-					</div>
+					<!--<div dojoType="dijit.layout.ContentPane" title="Topics">-->
+					<!--	<div dojoType="dools.docs.widget.ApiTree" style="padding-top: 5px;"-->
+					<!--		urls="topics.json"></div>-->
+					<!--</div>-->
 					<div dojoType="dijit.layout.ContentPane" title="Search" style="padding: 0px;">
 						<!--<div dojoType="dijit.MenuBar">-->
 						<!--	<div dojoType="dijit.MenuBarItemWidget" iconClass="iconSearch" style="padding: 0px;">-->
@@ -68,7 +66,7 @@
 				Content area
 			-->
 			<div id="tabContainer" dojoType="dijit.layout.TabContainer" region="center">
-				<div class="contentContainer" dojoType="dijit.layout.ContentPane" title="Dojo API" style="padding: 0px;">
+				<div class="contentContainer" dojoType="dijit.layout.ContentPane" title="EmbedJS API" style="padding: 0px;">
 					<!--
 						Home page.
 					-->
@@ -124,33 +122,6 @@
 		</div>
 	</div>
 
-
-
-
-
-
-	<!--<h1>Click a class/object on the left to see all info about it</h1>-->
-	<!---->
-	<!--Search: <input type="text" onkeyup="dijit.byId('l1').filter(this.value, ['class', 'object'])"/>-->
-	<!---->
-	<!--<div id="l1" style="width:20%; float:left;" dojoType="dools.docs.widget.ApiList"-->
-	<!--	urls="../resources/dojoApi-dojo.json, ../resources/dojoApi-dijit.json, ../resources/dojoApi-dojox.json">-->
-	<!--	<script type="dojo/method" event="onClick" args="evt,name,type">-->
-	<!--		if ("class"==type || "object"==type){-->
-	<!--			var w = dijit.byId("classView");-->
-	<!--			if (w){-->
-	<!--				w.destroy();-->
-	<!--			}-->
-	<!--			var node = dojo.create("div", {id:"classView"});-->
-	<!--			dojo.body().appendChild(node);-->
-	<!--			var w = new dools.docs.widget.ClassView({className:name}, node);-->
-	<!--			dojo.style(w.domNode, {float:"left", width:"70%"});-->
-	<!--		} else {-->
-	<!--			alert("Please click a class, this is just a Object/ClassBrowser :-)");-->
-	<!--		}-->
-	<!--	</script>-->
-	<!--</div>-->
-	
 	<script type="text/javascript" src="src/embed-kitchensink-android.uncompressed.js"></script>
 	<script type="text/javascript" src="../../../../dojo/dojo.js" djConfig="isDebug:true, parseOnLoad:true"></script>
 	<script type="text/javascript">

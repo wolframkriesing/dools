@@ -1,3 +1,5 @@
+// Simply copy+paste the content below into the api.json file and you got it :)
+
 [
 	//
 	//	Dojo
@@ -9,17 +11,14 @@
 		{"name":"body","type":"method"},
 		{"name":"byId","type":"method"},
 		{"name":"clone","type":"method"},
-		{"name":"config","type":"object"},
 		{"name":"connect","type":"method"},
 		{"name":"connectPublisher","type":"method"},
-		{"name":"contentHandlers","type":"object"},
 		{"name":"create","type":"method"},
 		{"name":"declare","type":"method"},
 		{"name":"Deferred","type":"class"},
 		{"name":"delegate","type":"method"},
 		{"name":"destroy","type":"method"},
 		{"name":"disconnect","type":"method"},
-		{"name":"doc","type":"object"},
 		{"name":"empty","type":"method"},
 		{"name":"every","type":"method"},
 		{"name":"extend","type":"method"},
@@ -29,7 +28,6 @@
 		{"name":"fromJson","type":"method"},
 		{"name":"getComputedStyle","type":"method"},
 		{"name":"getObject","type":"method"},
-		{"name":"global","type":"object"},
 		{"name":"hasClass","type":"method"},
 		{"name":"hitch","type":"method"},
 		{"name":"indexOf","type":"method"},
@@ -41,7 +39,7 @@
 		{"name":"isNumeric","type":"method"},
 		{"name":"isObject","type":"method"},
 		{"name":"isString","type":"method"},
-		{"name":"jsonp","type":"object"},
+		{"name":"jsonp","type":"method"},
 		{"name":"lastIndexOf","type":"method"},
 		{"name":"map","type":"method"},
 		{"name":"mixin","type":"method"},
