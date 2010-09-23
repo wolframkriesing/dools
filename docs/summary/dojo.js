@@ -29,8 +29,10 @@ dools.docs.summary.dojo = new (dojo.declare(
 			var params = fpOutput.parameters || [];
 			// Add the description, which we get from the DocStringParser.
 			for (var i=0, l = params.length, name; i<l; i++){
-				// 'dpOutput[params[i].name]' might not exist, so we do '|| "" '.
-				paramDoc = (dpOutput[params[i].name] || "").split("\n");
+				// Properly check if the property exists, used to be dpOutput[x] || "" which fails
+				// when "x" is "constructor". Fixed by using hasOwnProperty.
+// TODO write test case for the case documented above
+				paramDoc = (dpOutput.hasOwnProperty(params[i].name) ? dpOutput[params[i].name] : "").split("\n");
 				params[i].datatype = paramDoc[0];
 				params[i].description = paramDoc.slice(1).join("\n");
 			}
