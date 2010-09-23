@@ -46,11 +46,11 @@ dojo.declare(
 			//		We return the plain doc string,
 			//		this function can be overridden to parse the docstring.
 			// summary: Parse an arbitrary
-			var search,
-				blocks = [],
-				lines = docString.split("\n"),
-				key = this.blockParserConfig.defaultBlockKey || null, 
-				blockLines = [];
+			var search;
+			var blocks = [];
+			var lines = docString.split("\n");
+			var key = this.blockParserConfig.defaultBlockKey || null;
+			var blockLines = [];
 			for (var i=0, l=lines.length, line; i<l; i++){
 				line = lines[i];
 				search = line.match(this.blockParserConfig.searchKeyRegExp);
