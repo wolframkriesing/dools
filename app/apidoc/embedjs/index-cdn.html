@@ -3,11 +3,11 @@
 <head>
 	<title>EmbedJS API Docs</title>
 	<style type="text/css">
-		@import "../../../../dojo/resources/dojo.css";
-		@import "../../../../dijit/themes/claro/claro.css";
-		@import "../../../../dijit/themes/dijit.css";
-		@import "../../../../dojox/highlight/resources/highlight.css";
-		@import "../../../../dojox/layout/resources/ExpandoPane.css";
+		@import "http://ajax.googleapis.com/ajax/libs/dojo/1.5.0/dojo/resources/dojo.css";
+		@import "http://ajax.googleapis.com/ajax/libs/dojo/1.5.0/dijit/themes/claro/claro.css";
+		@import "http://ajax.googleapis.com/ajax/libs/dojo/1.5.0/dijit/themes/dijit.css";
+		@import "http://ajax.googleapis.com/ajax/libs/dojo/1.5.0/dojox/highlight/resources/highlight.css";
+		@import "http://ajax.googleapis.com/ajax/libs/dojo/1.5.0/dojox/layout/resources/ExpandoPane.css";
 
 		@import "../../../docs/widget/resources/ApiTree.css";
 		@import "../../../docs/widget/resources/ApiList.css";
@@ -23,6 +23,7 @@
 	</style>
 </head>
 <body class="claro">
+
 
 	<div dojoType="dijit.layout.BorderContainer" style="height: 100%; width: 100%;" gutters="false">
 		
@@ -70,7 +71,7 @@
 						Home page.
 					-->
 					<div class="homePage" style="padding:0; height:100%; width:100%; overflow:hidden;">
-						<iframe src="http://embedjs.org" style="border: 0pt none; height: 100%; width: 100%; overflow: auto;"></iframe>
+						<!--<iframe src="http://embedjs.org" style="border: 0pt none; height: 100%; width: 100%; overflow: auto;"></iframe>-->
 					</div>
 				</div>
 			</div>
@@ -78,30 +79,33 @@
 	</div>
 
 	<script type="text/javascript" src="src/src.js"></script>
-	<script type="text/javascript" src="../../../../dojo/dojo.js" djConfig="isDebug:false, parseOnLoad:true"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/dojo/1.5.0/dojo/dojo.xd.js"
+			djConfig="isDebug:false, parseOnLoad:true, baseUrl: './', modulePaths:{'dools':'../../..'},xdWaitSeconds:10, dojoBlankHtmlUrl:'../../../../dojo/resources/blank.html'"></script>
 	<script type="text/javascript">
 		//
 		//	setup
 		//
-		dojo.require("dools.docs.setup.dojo");
-		dojo.require("dools.app.apidoc._base");
-		
-		dools.docs.setup.dojo.require = function(){
-		};
-		dools.docs.setup.dojo.getSourceFiles = function(){
-			return ["src/src.js"];
-		};
-		dools.docs.setup.dojo.createObjectInfo = function(params){
-			if (!params.objectName){
-				params.objectName = "embedjs";
-			} else {
-				params.objectName = params.objectName.replace(/^dojo/, "embedjs");
-			}
-			var className = this.docSyntax.substring(0,1).toUpperCase() + this.docSyntax.substring(1);
-			return new dools.docs.objectInfo[className](params);
-		};
-
-		var app = new dools.app.apidoc({docSyntax:"dojo"});
+		dojo.ready(function(){
+			dojo.require("dools.docs.setup.dojo");
+			//dojo.require("dools.app.apidoc._base");
+			//
+			//dools.docs.setup.dojo.require = function(){
+			//};
+			//dools.docs.setup.dojo.getSourceFiles = function(){
+			//	return ["src/src.js"];
+			//};
+			//dools.docs.setup.dojo.createObjectInfo = function(params){
+			//	if (!params.objectName){
+			//		params.objectName = "embedjs";
+			//	} else {
+			//		params.objectName = params.objectName.replace(/^dojo/, "embedjs");
+			//	}
+			//	var className = this.docSyntax.substring(0,1).toUpperCase() + this.docSyntax.substring(1);
+			//	return new dools.docs.objectInfo[className](params);
+			//};
+			//
+			//var app = new dools.app.apidoc({docSyntax:"dojo"});
+		});
 	</script>
 </body>
 </html>
