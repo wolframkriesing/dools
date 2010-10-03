@@ -1,0 +1,2 @@
+	embedjs = dojo;
+})();

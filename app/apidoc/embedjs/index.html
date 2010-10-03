@@ -42,7 +42,7 @@
 			<div class="naviPane" dojoType="dojox.layout.ExpandoPane" splitter="true" duration="125" region="left" title="Navigation" maxWidth="275">
 				<div dojoType="dijit.layout.TabContainer" tabStrip="true">
 					<div dojoType="dijit.layout.ContentPane" title="API">
-						<div dojoType="dools.docs.widget.ApiTree" style="padding-top: 5px;"
+						<div dojoType="dools.docs.widget.ApiTree" autoExpand="true" style="padding-top: 5px;"
 							urls="api.json"></div>
 					</div>
 					<div dojoType="dijit.layout.ContentPane" title="Topics">
@@ -70,7 +70,7 @@
 					<!--
 						Home page.
 					-->
-					<div class="homePage" style="padding:0;">
+					<div class="homePage" style="padding:0; height:100%; width:100%; overflow:hidden;">
 						<iframe src="http://embedjs.org" style="border: 0pt none; height: 100%; width: 100%; overflow: auto;"></iframe>
 					</div>
 				</div>
