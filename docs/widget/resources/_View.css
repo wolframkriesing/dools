@@ -16,16 +16,29 @@
 .doolsDocsMethodView h1, .doolsDocsMethodView h2,
 .doolsDocsClassView h1, .doolsDocsClassView h2{
 	color:#3465A4;
+	font-size: 1.8em;
+	font-weight: normal;
+}
+
+.doolsDocsMethodView h1, 
+.doolsDocsClassView h1{
+	font-size: 1.8em;
+}
+
+.doolsDocsMethodView h2, 
+.doolsDocsClassView h2{
+	font-size: 1.3em;
 }
 
 .doolsDocsMethodView .fileInfo,
 .doolsDocsClassView .fileInfo{
-	font-size:0.8em;
+	font-size: 0.8em;
 }
 
 .doolsDocsMethodView .exampleCall,
 .doolsDocsClassView .exampleCall{
-	font-family:Consolas,monospace;
+	font-family: Consolas,monospace;
+	font-size: 1.2em;
 }
 
 .doolsDocsMethodView .parameters,
@@ -40,3 +53,14 @@
 	.doolsDocsClassView .parameters td{
 		padding: 0.3em;
 	}
+
+.doolsDocsMethodView table,
+.doolsDocsClassView table{
+	border: 1px dotted lightgrey;
+	border-width: 1px 0 1px 1px;
+}
+
+.doolsDocsMethodView td,
+.doolsDocsClassView td{
+	border-right: 1px dotted lightgrey;
+}
