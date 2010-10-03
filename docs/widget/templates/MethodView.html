@@ -21,7 +21,7 @@
 	<!--
 		Parameters
 	-->
-	{% if tplData.parameters %}
+	{% if tplData.parameters.length %}
 		<table class="parameters">
 			<thead>
 				<tr>
@@ -45,22 +45,17 @@
 	<!--
 		Examples
 	-->
-	{% if tplData.example %}
+	{% if tplData.examples.length %}
 		<div class="methodExamples">
-			{% if method.obj.docString.example.items %}
-				<h2>Examples</h2>
-				{% for e in method.obj.docString.example %}
-					<div class="methodExample">
-						<h3>Example {{ forloop.counter }}:</h3>
-						{{ e }}
-					</div>
-				{% endfor %}
-			{% else %}
+			<h2>Examples</h2>
+			{% for e in tplData.examples %}
 				<div class="methodExample">
-					<h2>Example</h2>
-					{{ method.obj.docString.example }}
+					{% ifnotequal tplData.examples.length 1 %}
+						<h3>Example {{ forloop.counter }}:</h3>
+					{% endifnotequal %}
+					{{ e|markdown }}
 				</div>
-			{% endif %}
+			{% endfor %}
 		</div>
 	{% endif %}
 
