@@ -4,7 +4,7 @@
 	<title>EmbedJS API Docs</title>
 	<style type="text/css">
 		@import "../../../../dojo/resources/dojo.css";
-		@import "../../../../dijit/themes/nihilo/nihilo.css";
+		@import "../../../../dijit/themes/claro/claro.css";
 		@import "../../../../dijit/themes/dijit.css";
 		@import "../../../../dojox/highlight/resources/highlight.css";
 		@import "../../../../dojox/layout/resources/ExpandoPane.css";
@@ -22,7 +22,7 @@
 		}
 	</style>
 </head>
-<body class="nihilo">
+<body class="claro">
 
 	<div dojoType="dijit.layout.BorderContainer" style="height: 100%; width: 100%;" gutters="false">
 		
@@ -31,8 +31,7 @@
 		-->
 		<div class="headerPane" dojoType="dijit.layout.ContentPane" region="top" splitter="false">
 			<img class="appLogo" src="../img/logo_app.png" />
-			<a class="dojoApiLogo" href="http://www.dojotoolkit.org" title="Dojotoolkit.org" target="_blank"><img src="../img/dojoApiLogo.gif" /></a>
-			<img class="previewBadge" src="../img/preview.png" />
+			<a class="dojoApiLogo" href="http://www.embedjs.org" title="embedjs.org" target="_blank">embedJS</a>
 		</div>
 		<div dojoType="dijit.layout.BorderContainer" liveSplitters="false" persist="false" gutters="true" region="center">
 			
@@ -78,7 +77,7 @@
 		</div>
 	</div>
 
-	<script type="text/javascript" src="src/embed-kitchensink-android.uncompressed.js"></script>
+	<script type="text/javascript" src="src/src.js"></script>
 	<script type="text/javascript" src="../../../../dojo/dojo.js" djConfig="isDebug:true, parseOnLoad:true"></script>
 	<script type="text/javascript">
 		//
@@ -90,7 +89,7 @@
 		dools.docs.setup.dojo.require = function(){
 		};
 		dools.docs.setup.dojo.getSourceFiles = function(){
-			return ["src/embed-kitchensink-android.uncompressed.js"];
+			return ["src/src.js"];
 		};
 		dools.docs.setup.dojo.createObjectInfo = function(params){
 			if (!params.objectName){

@@ -37,12 +37,12 @@ dojo.declare(
 			this.inherited(arguments);
 			
 			// Connect on a node click and pass all values that the item has.
-			var valueFnc = dojo.hitch(this.store, "getValue"),
-				attrsFnc = dojo.hitch(this.store, "getAttributes");
+			var valueFnc = dojo.hitch(this.store, "getValue");
+			var attrsFnc = dojo.hitch(this.store, "getAttributes");
 			dojo.connect(this, "onClick", dojo.hitch(this, function(_, treeNode){
-				var item = treeNode.item,
-					attrs = attrsFnc(item),
-					data = {};
+				var item = treeNode.item;
+				var attrs = attrsFnc(item);
+				var data = {};
 				for (var i=0, l=attrs.length; i<l; i++){
 					data[attrs[i]] = valueFnc(item, attrs[i]);
 				}
@@ -57,7 +57,7 @@ dojo.declare(
 			// The following is probably quite slow, since it's executed for every item.
 			var type = this.store.isItem(item) ? this.store.getValue(item, "type") : null;
 			if (type){
-				return "_type_" + item.type;
+				return "dijitLeaf _type_" + item.type; // For some reason claro theme needs the class "dijitLeaf".
 			} else {
 				return opened ? "dijitFolderOpened" : "dijitFolderClosed";
 			}
