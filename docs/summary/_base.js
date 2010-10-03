@@ -153,6 +153,7 @@ dojo.declare(
 					lineNumber:fpOutput.lineNumber,
 					numLines:fpOutput.numLines
 				}),
+				examples:!dpOutput.hasOwnProperty("example") ? [] : (dojo.isArray(dpOutput.example) ? dpOutput.example : [dpOutput.example]),
 				implementedIn:reflectOutput.implementedIn,
 				definedInPrototype:reflectOutput.definedInPrototype,
 				isInherited:reflectOutput.isInherited,
