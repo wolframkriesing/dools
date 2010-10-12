@@ -1,0 +1,21 @@
+[
+	//
+	//	storage
+	//
+	{name:"storage", type:"module", children:[
+
+		{"name":"addEngine","type":"method"},
+		{"name":"clear","type":"method"},
+		{"name":"get","type":"method"},
+		{"name":"getAll","type":"method"},
+		{"name":"getAllKeys","type":"method"},
+		{"name":"init","type":"method"},
+		{"name":"parse","type":"method"},
+		{"name":"readStoreFromCookie","type":"method"},
+		{"name":"remove","type":"method"},
+		{"name":"set","type":"method"},
+		{"name":"stringify","type":"method"},
+		{"name":"updateCookie","type":"method"},
+
+	]}
+]
