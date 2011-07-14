@@ -51,11 +51,11 @@ Using git
 
 	%> mkdir dools
 	%> cd dools
-	%> git svn clone http://svn.dojotoolkit.org/src/dojo/trunk dojo
-	%> git svn clone http://svn.dojotoolkit.org/src/dijit/trunk dijit
-	%> git svn clone http://svn.dojotoolkit.org/src/dojox/trunk dojox
-	%> git svn clone http://svn.dojotoolkit.org/src/util/trunk util
-	%> git svn clone http://svn.github.com/wolframkriesing/dools.git
+	%> git clone http://svn.dojotoolkit.org/src/dojo/trunk dojo
+	%> git clone http://svn.dojotoolkit.org/src/dijit/trunk dijit
+	%> git clone http://svn.dojotoolkit.org/src/dojox/trunk dojox
+	%> git clone http://svn.dojotoolkit.org/src/util/trunk util
+	%> git clone http://svn.github.com/wolframkriesing/dools.git
 	...
 	%> ls
 	dijit/
