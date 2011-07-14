@@ -158,7 +158,7 @@ dojo.declare(
 			var regex = new RegExp("\\s" + name + "\\s*:\\s*function\\s*\\("); // Simple regex to fail fast, if this string is not in there, it's not this case.
 			var search = src.match(regex);
 			if (search!=null){ // If the method can be found parse the parameters. Sometimes the introspection is not perfect :-)
-				return this._prepareMethodReturnData(name, search, search.index + search[0].length);
+				return this._prepareMethodReturnData(name, search, search.index);// + search[0].length);
 			}
 			// Case 2, the straight forward method declaration, such as:
 			// 		dijit._Templated.getCachedTemplate = function(templatePath, templateString, alwaysUseString){
