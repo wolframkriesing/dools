@@ -90,6 +90,11 @@ dojo.declare(
 				//var m = this.methodName; // Add the methodName if given.
 				//this._reflectableObject = dojo.getObject(this.objectName + ( m ? "."+m : "" ));
 				this._reflectableObject = dojo.getObject(this.objectName);
+				if (typeof this._reflectableObject=='function'){
+					// If the reflectable object is a function, let's try to instanciate it.
+					// Good idea?
+					this._reflectableObject = new this._reflectableObject;
+				}
 			}
 			return this._reflectableObject;
 		}
