@@ -104,7 +104,8 @@ tests.register("dools.docs.tests.fileParser.JsDoc",
 			var fp = new dools.docs.fileParser.JsDoc("dools.docs.fileParser.tests.JsDoc", "query");
 			fp.load();
 			var methodData = fp.getMethodData();
-			t.assertEqual("query,context", params[0].name+","+params[1].name);
+			t.assertEqual(2, methodData.parameters.length);
+			t.assertEqual("query,context", methodData.parameters[0].name+","+methodData.parameters[1].name);
 		},
 		
 		
