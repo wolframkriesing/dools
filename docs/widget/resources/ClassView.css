@@ -18,6 +18,11 @@
 		margin-top: 0.2em;
 	}
 	
+		.doolsDocsClassView .method .shortDescription {
+			font-family: monospace;
+			white-space: pre;
+		}
+		
 	.doolsDocsClassView .methods li,
 	.doolsDocsClassView .properties li {
 		list-style-type: none;
